@@ -121,6 +121,7 @@ body{
         display: none;
         background-color: $color_golg;
         height: 50px;
+
         @media (max-width: 1020px){
             display: block;          
             &.active{
@@ -133,6 +134,7 @@ body{
                 z-index: 500;
 
                 width: 100%;
+                
             }
         }
     }
@@ -200,24 +202,32 @@ body{
     
     &__down {
         position: relative;
+        
     }
 
     &__nav {
+        
     }
     
     &__list {
         display: flex;
         justify-content: center;
         column-gap: 30px;
+
+        
         @media (max-width: 1020px){
             flex-direction: column;
             flex-wrap: wrap;
-
+            
             position: absolute;
             top: 50px;
             left: 0;
             z-index: 500;
             width: 100%;
+
+            //overflow: auto;
+            //height: 100%;
+            
             &.fix-burger{
                 position: fixed;
                 
@@ -236,7 +246,7 @@ body{
             transition:all 0.2s ease;
 
             &.active{
-                height: 100%;
+                height: auto;
                 padding: 15px 0px 15px 20px;
                 border-bottom: #fff 1px solid;
                 &.active-sub{

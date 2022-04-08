@@ -23,7 +23,7 @@ $color_blue: #07111d;
 
     align-items: center;
 
-    margin: 0px 0px 20px 0px;
+    margin: 0px 0px 40px 0px;
     
     justify-content: flex-end;
     
@@ -79,10 +79,10 @@ $color_blue: #07111d;
         text-align: center;
 
         @media (max-width: 1910px){
-            font-size: calc(16px + 14 * (100vw - 375px) / 1535);
+            font-size: calc(17px + 13 * (100vw - 375px) / 1535);
         }
         @media (max-width: 375px){
-            font-size: 14px;
+            font-size: 17px;
         }
 
         }
@@ -111,7 +111,7 @@ $color_blue: #07111d;
     justify-content: space-around;
     flex-wrap: wrap;
     column-gap: 20px;
-    row-gap: 20px;
+    row-gap: 40px;
 
     max-width: 1200px;
 
@@ -146,7 +146,7 @@ $color_blue: #07111d;
     align-items: center;
     justify-content: space-between;
 
-    max-width: 370px;
+    max-width: 400px;
     min-width: 300px;
 
 
@@ -205,7 +205,7 @@ $color_blue: #07111d;
         color: $color_text;
         text-align: center;
 
-        margin:0px 0px 20px 0px;
+        margin:0px 0px 30px 0px;
     }
 
     // .cart__botton
@@ -317,7 +317,7 @@ $color_blue: #07111d;
 
     align-items: center;
 
-    margin: 0px 0px 20px 0px;
+    margin: 0px 0px 40px 0px;
     
     justify-content: flex-end;
     
@@ -402,91 +402,311 @@ $color_blue: #07111d;
 .age-17 {
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
+
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
 
     // .age-17__item-1
     &__item-1 {
+        flex: 0 1 25%;
+
+        @media (max-width: 900px){
+            flex: 0 1 35%;
+        }
+        @media (max-width: 700px){
+            display: none;
+
+        }
+        
     }
 
     // .age-17__img-1
-    &__img-1 {
+    &__img-1 img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+
+        position: relative;
+        margin:20px 0px 0px 50px;
+        @media (max-width: 900px){
+            flex: 0 1 35%;
+            margin: 0;
+        }
     }
 
     // .age-17__title-1
     &__title-1 {
+        font-family: 'Montserrat';
+        text-transform: uppercase;
+        font-size: 45px;
+        font-weight: 600;
+        text-align: center;
+        color: $color_golg;
+
+        @media (max-width: 1910px){
+            font-size: calc(30px + 15 * (100vw - 375px) / 1535);
+        }
+        @media (max-width: 375px){
+            font-size: 30px;
+        }
     }
 
     // .age-17__sub-title-1
     &__sub-title-1 {
+        font-family: 'Montserrat';
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 140%;
+        font-weight: 600;
+        text-align: center;
+        color: $color_text;
     }
 
     // .age-17__item-2
     &__item-2 {
+        flex: 0 1 30%;
+        @media (max-width: 900px){
+            display: none;
+        }
     }
 
     // .age-17__img-2
-    &__img-2 {
+    &__img-2 img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
     }
 
     // .age-17__item-3
     &__item-3 {
+        flex: 0 1 45%;
+        padding: 0px 10px 0px 20px;
+        @media (max-width: 900px){
+            flex: 0 1 65%;
+        }
+        @media (max-width: 700px){
+            flex: 0 1 100%;
+            order: 1;
+
+            margin:0px 0px 20px 0px;
+        }
     }
 
     // .age-17__title-3
     &__title-3 {
+        font-family: 'Montserrat';
+        text-transform: uppercase;
+        font-size: 24px;
+        line-height: 140%;
+        font-weight: 600;
+        color: $color_golg;
+
+        margin:0px 0px 10px 0px;
     }
 
     // .age-17__sub-title-3
     &__sub-title-3 {
+        font-family: "Yeseva One";
+        font-size: 24px;
+        line-height: 120%;      
+        color: #000;
+
+        margin:0px 0px 10px 0px;
     }
 
     // .age-17__line
     &__line {
+        width: 40%;
+        height: 3px;
+        background-color: $color_golg;
+
+        margin:0px 0px 10px 0px;
     }
 
     // .age-17__text-3
     &__text-3 {
+        font-family: 'Montserrat';
+        
+        font-size: 17px;
+        line-height: 140%;
+        font-weight: 400;
+        
+        color: $color_text;
+
+        margin:0px 0px 20px 0px;
     }
 
     // .age-17__box-2040
     &__box-2040 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
     }
 
     // .age-17__left
     &__left {
+        flex: 0 1 50%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @media (max-width: 1120px){
+            flex:0 1 100%;
+            flex-direction: row;
+        }
     }
 
     // .age-17__2040
     &__2040 {
+        flex:0 1 50%;
+        @media (max-width: 700px){
+            flex:0 1 33%;
+        }
     }
 
     // .age-17__2040-title
     &__2040-title {
+        font-family: 'Montserrat';
+        text-transform: uppercase;
+        font-size: 45px;
+        font-weight: 600;
+        text-align: center;
+        color: $color_golg;
+        margin:0px 0px 10px 0px;
+
+        @media (max-width: 1910px){
+            font-size: calc(30px + 20 * (100vw - 375px) / 1535);
+        }
+        @media (max-width: 375px){
+            font-size: 25px;
+        }
     }
 
     // .age-17__2040-text
     &__2040-text {
+        font-family: 'Montserrat';
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 140%;
+        font-weight: 600;
+        text-align: center;
+        color: $color_text;
+
+        @media (max-width: 1910px){
+            font-size: calc(11px + 3 * (100vw - 375px) / 1535);
+        }
+        @media (max-width: 375px){
+            font-size: 11px;
+        }
     }
 
     // .age-17__1420
     &__1420 {
+        flex:0 1 50%;
+        @media (max-width: 700px){
+            flex:0 1 33%;
+        }
     }
 
     // .age-17__1420-title
     &__1420-title {
+        font-family: 'Montserrat';
+        text-transform: uppercase;
+        font-size: 45px;
+        font-weight: 600;
+        text-align: center;
+        color: $color_golg;
+
+        margin:0px 0px 10px 0px;
+
+        @media (max-width: 1910px){
+            font-size: calc(30px + 20 * (100vw - 375px) / 1535);
+        }
+        @media (max-width: 375px){
+            font-size: 25px;
+        }
     }
 
     // .age-17__1420-text
     &__1420-text {
+        font-family: 'Montserrat';
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 140%;
+        font-weight: 600;
+        text-align: center;
+        color: $color_text;
+
+        @media (max-width: 1910px){
+            font-size: calc(11px + 3 * (100vw - 375px) / 1535);
+        }
+        @media (max-width: 375px){
+            font-size: 11px;
+        }
+    }
+
+    &__none-17{
+        display: none;
+        @media (max-width: 700px){
+            flex: 0 1 33%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    &__none-title{
+        font-family: 'Montserrat';
+        text-transform: uppercase;
+        font-size: 45px;
+        font-weight: 600;
+        text-align: center;
+        color: $color_golg;
+
+        margin:0px 0px 10px 0px;
+
+        @media (max-width: 1910px){
+            font-size: calc(30px + 20 * (100vw - 375px) / 1535);
+        }
+        @media (max-width: 375px){
+            font-size: 25px;
+        }
+    }
+    &__none-text{
+        font-family: 'Montserrat';
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 140%;
+        font-weight: 600;
+        text-align: center;
+        color: $color_text;
+
+        @media (max-width: 1910px){
+            font-size: calc(11px + 3 * (100vw - 375px) / 1535);
+        }
+        @media (max-width: 375px){
+            font-size: 11px;
+        }
     }
 
     // .age-17__right
     &__right {
+        flex:0 1 50%;
+
+        @media (max-width: 1120px){
+            display: none;
+        }
     }
 
     // .age-17__right-img
-    &__right-img {
+    &__right-img img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
     }
 }
 
