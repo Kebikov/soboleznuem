@@ -1,0 +1,140 @@
+$color_golg: #ba9f5a;
+$color_text: #5B5B5B;
+$color_blue: #07111d;
+
+.shop{
+    padding: 0px 10px 0px 10px;
+}
+
+.card {
+    flex: 1 1 auto;
+    max-width: 360px;
+    min-width: 250px;
+
+    height: 100%;
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content:space-between;
+
+        height: 100%;
+
+        border: #5b5b5b42 3px solid;
+        border-radius: 10px;
+        padding: 0px 0px 10px 0px;
+
+        overflow: hidden;
+    }
+
+    &__title {
+        flex: 1 1 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-family: 'Montserrat';
+        font-size: 16px;
+        line-height: 140%;
+        font-weight: 500;
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 10px 5px 10px 5px;
+        background-color: $color_golg;
+
+        @media (max-width: 1910px){
+            font-size: calc(14px + 2 * (100vw - 750px) / 1180);
+        }
+        @media (max-width: 750px){
+            font-size: 14px;
+        }
+    }
+    &__img{
+        position: relative;
+        width: 100%;
+        padding: 0px 0px 80% 0px;
+    }
+    &__img img{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+
+        object-fit: cover;
+        width: 100%;
+        
+        padding: 0px 10px 0px 10px;
+    }
+
+    &__prais {
+        font-family: 'Montserrat';
+        font-size: 20px;
+        line-height: 140%;
+        font-weight: 500;
+        color: $color_golg;
+        text-align: center;
+        margin: 0px 0px 10px 0px;
+    }
+
+    &__button {
+        font-family: 'Montserrat';
+        font-size: 20px;
+        line-height: 140%;
+        font-weight: 400;
+        color: #fff;
+        background-color: $color_golg;
+        text-align: center;
+        padding: 10px 0px 10px 0px;
+        margin: 0px 20px 0px 20px;
+        border-radius: 7px;
+    }
+}
+
+
+.shop-block {
+    display: flex;
+    justify-content: space-between;
+    
+    flex-wrap: wrap;
+    row-gap: 20px;
+
+    max-width: 1200px;
+    margin: 0 auto 20px auto;
+
+    &_one{
+        row-gap: 0px;
+    }
+
+    &__item {
+        flex: 0 1 33%;
+
+        display: flex;
+        justify-content: center;
+        
+
+        @media (max-width: 800px){
+            flex: 0 1 100%;
+        }
+    }
+}
+
+.attention {
+    margin: 0 auto 40px auto;
+    max-width: 1200px;
+
+    border: #ba9f5a 3px solid;
+    border-radius: 5px;
+
+    &__text {
+        font-family: 'Montserrat';
+        font-size: 14px;
+        line-height: 180%;
+        font-weight: 600;
+        color: $color_text;
+        text-align: center;
+        //text-transform: uppercase;
+        padding: 20px 10px 20px 10px;
+    }
+}
+

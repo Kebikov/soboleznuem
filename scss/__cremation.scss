@@ -1,0 +1,38 @@
+$color_golg: #ba9f5a;
+$color_text: #5B5B5B;
+$color_blue: #07111d;
+
+.text-title {
+    font-family: 'Montserrat';
+        font-size: 27px;
+        line-height: 140%;
+        font-weight: 500;
+        color: $color_golg;
+        margin-bottom: 20px;
+        &_margin{
+            margin: 0px 20px 0px 20px;
+        }
+}
+
+.text {
+    
+    &__list {
+    }
+
+    &__line {
+        position: relative;
+        margin: 0px 0px 15px 17px;
+        &::before{
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: -17px;
+
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: $color_golg;
+        }
+    }
+}
+
