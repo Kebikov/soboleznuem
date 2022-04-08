@@ -2,6 +2,502 @@ $color_golg: #ba9f5a;
 $color_text: #5B5B5B;
 $color_blue: #07111d;
 
+.coffin-img {
+    
+    margin: 0 100px;
+
+    @media (max-width: 1200px){
+        margin: 0;
+    }
+
+    & img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%; 
+    }
+}
+
+//= блок соболезнуем 
+.box-text {
+    display: flex;
+
+    align-items: center;
+
+    margin: 0px 0px 20px 0px;
+    
+    justify-content: flex-end;
+    
+
+    // .box-text__span
+    &__span {
+        flex: 0 1 30%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 0px 0px 25% 0px;
+
+        background-color: #ba9f5ae7;
+        margin: -100px 150px 0px 0px;
+
+        @media (max-width: 1500px){
+            flex: 0 1 40%;
+            
+        }
+        @media (max-width: 1500px){
+            flex: 0 1 50%;
+            
+        }
+        @media (max-width: 1200px){
+            flex: 0 1 80%;
+            padding: 0px 0px 15em 0px;
+            margin: -50px auto 0px auto;
+        }
+        @media (max-width: 770px){
+            flex: 0 1 80%;
+            padding: 0px 0px 15em 0px;
+            margin: -50px auto 0px auto;
+        }
+
+        position: relative;
+        &::before{
+            content: "Искренне соболезнуем Вам, если Вас коснулось горе. Предлагаем и оказываем Все виды ритуальных услуг на протяжении более, чем 17 лет.";
+            position: absolute;
+            top: 50%;
+            left: 0;
+
+            transform: translate(0, -50%);
+
+            padding:2em;
+
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 30px;
+        line-height: 140%;
+        font-weight: 500;
+        color: #fff;
+        text-align: center;
+
+        @media (max-width: 1910px){
+            font-size: calc(16px + 14 * (100vw - 375px) / 1535);
+        }
+        @media (max-width: 375px){
+            font-size: 14px;
+        }
+
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 50%;
+
+            transform: translate(-50%, 0);
+
+            width: 30%;
+            height: 3px;
+            background-color: #fff;
+            @media (max-width: 600px){
+                height: 0;
+            }
+        }
+    }
+}
+
+
+//= multi-block
+.multi {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 20px;
+
+    max-width: 1200px;
+
+    margin: -200px auto 20px auto;
+
+    @media (max-width: 1200px){
+        margin: 0px 20px 20px 20px;
+    }
+
+    // .multi__item
+    &__item {
+        flex: 0 1 32%;
+        display: flex;
+        justify-content: center;
+
+        height: 100%;
+
+        @media (max-width: 1020px){
+            height: auto;
+        }
+
+        @media (max-width: 770px){
+            flex: 0 1 80%;
+        }
+    }
+}
+
+//= multi-cart
+.cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 370px;
+    min-width: 300px;
+
+
+    &_margin-2{
+        margin: 200px 0px 0px 0px;
+        @media (max-width: 1020px){
+            margin: 0;
+        }
+    }
+    &_margin-3{
+        margin: 400px 0px 0px 0px;
+        @media (max-width: 1020px){
+            margin: 0;
+        }
+    }
+
+    // .cart__img
+    &__img {
+        margin:0px 0px 30px 0px;
+        & img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    // .cart__line
+    &__line {
+        width: 70%;
+        height: 3px;
+
+        background-color: $color_golg;
+        margin:0px 0px 20px 0px;
+    }
+
+    // .cart__title
+    &__title {
+        font-family: "Yeseva One";
+        font-size: 25px;
+        line-height: 140%;
+        font-weight: 500;
+        color: #000;
+        text-align: center;
+
+        margin:0px 0px 20px 0px;
+    }
+
+    // .cart__sub-title
+    &__sub-title {
+        flex: 1 1 auto;
+
+        font-family: 'Montserrat';
+        font-size: 17px;
+        line-height: 120%;
+        font-weight: 500;
+        color: $color_text;
+        text-align: center;
+
+        margin:0px 0px 20px 0px;
+    }
+
+    // .cart__botton
+    &__botton {
+        font-family: 'Montserrat';
+        font-size: 16px;
+        line-height: 120%;
+        font-weight: 500;
+        color: #fff;
+        text-align: center;
+
+        padding: 0.6em 1em 0.6em 1em;
+        background-color: $color_golg;
+        border-radius: 3px;
+    }
+}
+
+//= блок соболезнуем 2 
+.box-text-2 {
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+    z-index: 2;
+
+    margin: 0px 0px 20px 0px;
+    
+    // .box-text__span
+    &__span-2 {
+        flex: 0 1 30%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 0px 0px 25% 0px;
+
+        background-color: rgba(0, 0, 0, 0.781);
+
+        margin: 0px 0px -100px 150px;
+
+        @media (max-width: 1500px){
+            flex: 0 1 40%;
+            
+        }
+        @media (max-width: 1500px){
+            flex: 0 1 50%;
+            
+        }
+        @media (max-width: 1200px){
+            flex: 0 1 80%;
+            padding: 0px 0px 15em 0px;
+            margin: 0px auto -100px auto;
+        }
+        @media (max-width: 770px){
+            flex: 0 1 80%;
+            padding: 0px 0px 15em 0px;
+            margin: 0px auto -100px auto;
+        }
+
+        position: relative;
+        &::before{
+            content: "Кроме финансовой составляющей, нами безусловно движет то, что люди благодарят нас за оказанные услуги и рекомендуют нас знакомым…";
+            position: absolute;
+            top: 50%;
+            left: 0;
+
+            transform: translate(0, -50%);
+
+            padding:2em;
+
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 30px;
+            line-height: 140%;
+            font-weight: 500;
+            color: #fff;
+            text-align: center;
+
+        @media (max-width: 1910px){
+            font-size: calc(16px + 14 * (100vw - 375px) / 1535);
+        }
+        @media (max-width: 375px){
+            font-size: 14px;
+        }
+
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 50%;
+
+            transform: translate(-50%, 0);
+
+            width: 30%;
+            height: 3px;
+            background-color: #fff;
+            @media (max-width: 600px){
+                height: 0;
+            }
+        }
+    }
+}
+
+//= блок соболезнуем 3 
+.box-text-3 {
+    display: flex;
+
+    align-items: center;
+
+    margin: 0px 0px 20px 0px;
+    
+    justify-content: flex-end;
+    
+
+    // .box-text__span
+    &__span-3 {
+        flex: 0 1 30%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 0px 0px 25% 0px;
+
+        background-color: #ba9f5ae7;
+        margin: -100px 150px 0px 0px;
+
+        @media (max-width: 1500px){
+            flex: 0 1 40%;
+            
+        }
+        @media (max-width: 1500px){
+            flex: 0 1 50%;
+            
+        }
+        @media (max-width: 1200px){
+            flex: 0 1 80%;
+            padding: 0px 0px 15em 0px;
+            margin: -50px auto 0px auto;
+        }
+        @media (max-width: 770px){
+            flex: 0 1 80%;
+            padding: 0px 0px 10em 0px;
+            margin: -50px auto 0px auto;
+        }
+
+        position: relative;
+        &::before{
+            content: "Если у Вас, есть какие-либо вопросы относительно наших услуг, пожалуйста, свяжитесь с нами.";
+            position: absolute;
+            top: 50%;
+            left: 0;
+
+            transform: translate(0, -50%);
+
+            padding: 1em 2em 1em 2em;
+
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 30px;
+        line-height: 140%;
+        font-weight: 500;
+        color: #fff;
+        text-align: center;
+
+        @media (max-width: 1910px){
+            font-size: calc(16px + 14 * (100vw - 375px) / 1535);
+        }
+        @media (max-width: 375px){
+            font-size: 14px;
+        }
+
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 50%;
+
+            transform: translate(-50%, 0);
+
+            width: 30%;
+            height: 3px;
+            background-color: #fff;
+            @media (max-width: 600px){
+                height: 0;
+            }
+        }
+    }
+}
+
+//= age-17 
+.age-17 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    // .age-17__item-1
+    &__item-1 {
+    }
+
+    // .age-17__img-1
+    &__img-1 {
+    }
+
+    // .age-17__title-1
+    &__title-1 {
+    }
+
+    // .age-17__sub-title-1
+    &__sub-title-1 {
+    }
+
+    // .age-17__item-2
+    &__item-2 {
+    }
+
+    // .age-17__img-2
+    &__img-2 {
+    }
+
+    // .age-17__item-3
+    &__item-3 {
+    }
+
+    // .age-17__title-3
+    &__title-3 {
+    }
+
+    // .age-17__sub-title-3
+    &__sub-title-3 {
+    }
+
+    // .age-17__line
+    &__line {
+    }
+
+    // .age-17__text-3
+    &__text-3 {
+    }
+
+    // .age-17__box-2040
+    &__box-2040 {
+    }
+
+    // .age-17__left
+    &__left {
+    }
+
+    // .age-17__2040
+    &__2040 {
+    }
+
+    // .age-17__2040-title
+    &__2040-title {
+    }
+
+    // .age-17__2040-text
+    &__2040-text {
+    }
+
+    // .age-17__1420
+    &__1420 {
+    }
+
+    // .age-17__1420-title
+    &__1420-title {
+    }
+
+    // .age-17__1420-text
+    &__1420-text {
+    }
+
+    // .age-17__right
+    &__right {
+    }
+
+    // .age-17__right-img
+    &__right-img {
+    }
+}
+
+
+
+
+
+
+
+
+
 
 //= prais 
 .box-prais {
@@ -9,7 +505,6 @@ $color_blue: #07111d;
 
     background:rgb(99, 99, 99) url(../img/home/texture.jpg);
 }
-
 .prais {
     display: flex;
     justify-content: space-around;
@@ -31,7 +526,6 @@ $color_blue: #07111d;
             }
 		}
 }
-
 .prais-list {
     display: flex;
     flex-direction: column;
@@ -149,12 +643,6 @@ $color_blue: #07111d;
             padding: 10px 20px 10px 20px;
             border-bottom: #ccc 1px solid;
 
-            @media (max-width: 1910px){
-                font-size: calc(14px + 3 * (100vw - 750px) / 1180);
-            }
-            @media (max-width: 750px){
-                font-size: 14px;
-            }
 
             & span{
                 position: relative;

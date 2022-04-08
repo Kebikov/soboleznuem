@@ -60,13 +60,25 @@ body{
         justify-content: center;
 
         font-family: 'Montserrat';
-        font-size: 2.142rem;
+        font-size: 30px;
         font-weight: 500;
         color: $color_golg;
         
-        margin: -30px 0px 0px 0px;
+        margin: -30px 0px 0px 0px;      
+
         & span{
             position: relative;
+
+            text-align: center;
+            
+            @media (max-width: 1910px){
+                font-size: calc(23px + 7 * (100vw - 750px) / 1180);
+            }
+            @media (max-width: 750px){
+                font-size: 23px;
+                padding: 0px 10px 0px 10px;
+            }
+
             &::before{
                 position: absolute;
                 content: '';
