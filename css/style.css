@@ -607,10 +607,6 @@ body.active {
           flex: 1 1 auto;
 }
 
-.main {
-  margin: 0px 0px 10000px 0px;
-}
-
 .heder-page {
   width: 100%;
   position: relative;
@@ -723,4 +719,110 @@ body.active {
   height: 10px;
   border-radius: 50%;
   background-color: #ba9f5a;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 20px 40px 20px 40px;
+  background-color: #07111d;
+}
+
+.footer__item-img {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 25%;
+          flex: 0 1 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 1020px) {
+  .footer__item-img {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    margin: 0px 0px 20px 0px;
+  }
+}
+
+.footer__img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 100px;
+  max-width: 100%;
+}
+
+.footer__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 25%;
+          flex: 0 1 25%;
+}
+
+@media (max-width: 1020px) {
+  .footer__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 32%;
+            flex: 0 1 32%;
+  }
+}
+
+@media (max-width: 770px) {
+  .footer__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    margin: 0px 0px 20px 0px;
+  }
+}
+
+.footer__title {
+  font-family: 'Montserrat';
+  font-size: 27px;
+  line-height: 140%;
+  font-weight: 500;
+  color: #ba9f5a;
+  text-align: center;
+}
+
+@media (max-width: 1910px) {
+  .footer__title {
+    font-size: calc(20px + 7 * (100vw - 750px) / 1180);
+  }
+}
+
+@media (max-width: 750px) {
+  .footer__title {
+    font-size: 20px;
+  }
+}
+
+.footer__text {
+  font-family: 'Montserrat';
+  font-size: 17px;
+  line-height: 140%;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.582);
+  text-align: center;
+}
+
+@media (max-width: 1910px) {
+  .footer__text {
+    font-size: calc(15px + 2 * (100vw - 750px) / 1180);
+  }
+}
+
+@media (max-width: 750px) {
+  .footer__text {
+    font-size: 15px;
+  }
 }
