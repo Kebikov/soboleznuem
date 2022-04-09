@@ -9,8 +9,17 @@ $color_blue: #07111d;
         font-weight: 500;
         color: $color_golg;
         margin-bottom: 20px;
+
+
+        @media (max-width: 1910px){
+            font-size: calc(19px + 8 * (100vw - 375px) / 1535);
+        }
+        @media (max-width: 375px){
+            font-size: 19px;
+        }
+
         &_margin{
-            margin: 0px 20px 0px 20px;
+            margin: 0px 10px 0px 10px;
         }
 }
 

@@ -25,6 +25,8 @@ $color_blue: #07111d;
         font-family: "Yeseva One";
         font-size: 40px;
         text-transform: uppercase;
+        text-align: center;
+        line-height: 120%;
 
         @media (max-width: 1910px){
             font-size: calc(27px + 13 * (100vw - 750px) / 1180);
@@ -68,8 +70,15 @@ $color_blue: #07111d;
         font-weight: 500;
         color: $color_text;
         margin-bottom: 40px;
+
+        @media (max-width: 1910px){
+            font-size: calc(16px + 1 * (100vw - 375px) / 1535);
+        }
+        @media (max-width: 375px){
+            font-size: 16px;
+        }
         &_margin{
-            margin: 0px 20px 0px 20px;
+            margin: 0px 10px 0px 10px;
         }
 }
 .text-img{

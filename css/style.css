@@ -1757,6 +1757,8 @@ body.active {
   font-family: "Yeseva One";
   font-size: 40px;
   text-transform: uppercase;
+  text-align: center;
+  line-height: 120%;
 }
 
 @media (max-width: 1910px) {
@@ -1806,8 +1808,20 @@ body.active {
   margin-bottom: 40px;
 }
 
+@media (max-width: 1910px) {
+  .text-page {
+    font-size: calc(16px + 1 * (100vw - 375px) / 1535);
+  }
+}
+
+@media (max-width: 375px) {
+  .text-page {
+    font-size: 16px;
+  }
+}
+
 .text-page_margin {
-  margin: 0px 20px 0px 20px;
+  margin: 0px 10px 0px 10px;
 }
 
 .text-img {
@@ -1830,8 +1844,20 @@ body.active {
   margin-bottom: 20px;
 }
 
+@media (max-width: 1910px) {
+  .text-title {
+    font-size: calc(19px + 8 * (100vw - 375px) / 1535);
+  }
+}
+
+@media (max-width: 375px) {
+  .text-title {
+    font-size: 19px;
+  }
+}
+
 .text-title_margin {
-  margin: 0px 20px 0px 20px;
+  margin: 0px 10px 0px 10px;
 }
 
 .text__line {
