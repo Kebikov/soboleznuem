@@ -2056,19 +2056,24 @@ body.active {
 .card__img {
   position: relative;
   width: 100%;
+  height: 100%;
+}
+
+.card__img_height {
   padding: 0px 0px 80% 0px;
 }
 
 .card__img img {
   position: absolute;
   top: 50%;
-  left: 0;
-  -webkit-transform: translate(0, -50%);
-      -ms-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-  -o-object-fit: cover;
-     object-fit: cover;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -o-object-fit: contain;
+     object-fit: contain;
   width: 100%;
+  height: 100%;
   padding: 0px 10px 0px 10px;
 }
 
@@ -2151,6 +2156,38 @@ body.active {
   color: #5B5B5B;
   text-align: center;
   padding: 20px 10px 20px 10px;
+}
+
+.flex-wreaths {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 22%;
+          flex: 0 1 22%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 820px) {
+  .flex-wreaths {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 48%;
+            flex: 0 1 48%;
+  }
+}
+
+@media (max-width: 540px) {
+  .flex-wreaths {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 90%;
+            flex: 0 1 90%;
+  }
+}
+
+.card__img_height-wreaths {
+  padding: 0px 0px 170% 0px;
 }
 
 .footer {
