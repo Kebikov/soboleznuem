@@ -148,12 +148,10 @@ const burgerPxTop = burger.getBoundingClientRect().top;
 const headerList = document.querySelector('.header__list');
 
 // высота меню для скрола
-
 function fnHeaderList (){
     const burgerPxBottom = document.documentElement.clientHeight - burger.getBoundingClientRect().bottom;
     headerList.style.cssText = `max-height: ${burgerPxBottom}px;`;
 }
-
 fnHeaderList();
 //---
 
