@@ -213,7 +213,6 @@ body{
         display: flex;
         justify-content: center;
         column-gap: 30px;
-
         
         @media (max-width: 1020px){
             flex-direction: column;
@@ -226,8 +225,8 @@ body{
             z-index: 500;
             width: 100%;
 
-            //overflow: auto;
-            //height: 100%;
+            overflow: auto;
+            //max-height: 546px;
             
             &.fix-burger{
                 position: fixed;
@@ -360,6 +359,7 @@ body{
     &__line-sub{
         width: 0;
         height: 0;
+        
         &.hover-sub{
             padding: 15px 10px 15px 10px;
             height: auto;
@@ -382,6 +382,7 @@ body{
     &__link-sub{
         font-family: 'Montserrat';
         text-transform: uppercase;
+        line-height: 160%;
         font-size: 0rem;
         font-weight: 500;
         color: #fff;

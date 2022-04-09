@@ -409,6 +409,7 @@ body.active {
     left: 0;
     z-index: 500;
     width: 100%;
+    overflow: auto;
   }
   .header__list.fix-burger {
     position: fixed;
@@ -597,6 +598,7 @@ body.active {
 .header__link-sub {
   font-family: 'Montserrat';
   text-transform: uppercase;
+  line-height: 160%;
   font-size: 0rem;
   font-weight: 500;
   color: #fff;

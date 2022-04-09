@@ -70,11 +70,9 @@ console.log(hover);
 
 function hoverOver (hover){
     const width = window.innerWidth;
-    console.log('оно= ', width);
 
-    //оно=1
     if(width > 1020){
-        console.log('оно=1');
+
     const over = hover.target;
 
     const overParent = over.closest('.header__line');
@@ -87,7 +85,6 @@ function hoverOver (hover){
 
 
     function hoverOverSub (e){
-        console.log('оно=2');
         const overLineSub = overParent.querySelectorAll('.header__line-sub');
         overListSub.classList.add('hover-sub');
         overLineSub.forEach(function(e){
@@ -150,7 +147,21 @@ const burger = document.querySelector('.header__burger');
 const burgerPxTop = burger.getBoundingClientRect().top;
 const headerList = document.querySelector('.header__list');
 
+// высота меню для скрола
+
+function fnHeaderList (){
+    const burgerPxBottom = document.documentElement.clientHeight - burger.getBoundingClientRect().bottom;
+    headerList.style.cssText = `max-height: ${burgerPxBottom}px;`;
+}
+
+fnHeaderList();
+//---
+
 function listenerScroll () {
+    // высота меню для скрола
+    fnHeaderList();
+    //---
+
     console.log('top= ', burgerPxTop);
     console.log('sclollY= ', window.scrollY);
 
