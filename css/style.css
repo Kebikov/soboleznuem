@@ -2222,6 +2222,38 @@ body.active {
   padding: 0px 0px 147% 0px;
 }
 
+.flex-crosses {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 22%;
+          flex: 0 1 22%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 820px) {
+  .flex-crosses {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 48%;
+            flex: 0 1 48%;
+  }
+}
+
+@media (max-width: 540px) {
+  .flex-crosses {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 90%;
+            flex: 0 1 90%;
+  }
+}
+
+.card__img_height-crosses {
+  padding: 0px 0px 135% 0px;
+}
+
 .footer {
   display: -webkit-box;
   display: -ms-flexbox;
