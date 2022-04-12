@@ -201,21 +201,20 @@ function startTime(){
     let startCremation = Number(elCremation.dataset.start);
     let endCremation = Number(elCremation.dataset.end);
     
-    timeText(timeCremation, startCremation, endCremation, elCremation);
-    timeText(timeAge, startAge, endAge, elAge);
-    timeText(timeAge1, startAge1, endAge1, elAge1);
-    timeText(timeBurial, startBurial, endBurial, elBurial);
+    showText(timeCremation, startCremation, endCremation, elCremation);
+    showText(timeAge, startAge, endAge, elAge);
+    showText(timeAge1, startAge1, endAge1, elAge1);
+    showText(timeBurial, startBurial, endBurial, elBurial);
 }
 
-
-function timeText (time, start, end, el) {
+function showText (time, start, end, el) {
     const timeInterval = time / end;
     let step = 1;
     if(timeInterval < 10){
         let proc = Math.trunc(10 / timeInterval);
         step = proc;
     }
-    let timeOut =  setTimeout(timeText, timeInterval, time, step + start, end, el);
+    let timeOut =  setTimeout(showText, timeInterval, time, step + start, end, el);
     if (start >= end) {
         clearTimeout(timeOut);
         start = end;
@@ -224,14 +223,6 @@ function timeText (time, start, end, el) {
 }
 
 
-function test (one){
-        console.log(one);
-}
-
-//let one = 2;
-
-if(typeof myName != 'undefined'){
-}
 
 
 
