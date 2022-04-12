@@ -56,7 +56,6 @@ function listenerClick (odject) {
         });
 
     }
-
 }
 
 // hover ----------------------------------------------------------------------------------------
@@ -147,6 +146,7 @@ const burger = document.querySelector('.header__burger');
 const burgerPxTop = burger.getBoundingClientRect().top;
 const headerList = document.querySelector('.header__list');
 
+
 // высота меню для скрола
 function fnHeaderList (){
     const burgerPxBottom = document.documentElement.clientHeight - burger.getBoundingClientRect().bottom;
@@ -155,13 +155,12 @@ function fnHeaderList (){
 fnHeaderList();
 //---
 
+let flag = 0;
+
 function listenerScroll () {
     // высота меню для скрола
     fnHeaderList();
     //---
-
-    console.log('top= ', burgerPxTop);
-    console.log('sclollY= ', window.scrollY);
 
     if(burgerPxTop <= window.scrollY){
         burger.classList.add('fix-burger');
@@ -171,6 +170,63 @@ function listenerScroll () {
         burger.classList.remove('fix-burger');
         headerList.classList.remove('fix-burger');
     }
+
+    if(window.scrollY >= age17Show && flag === 0){
+        startTime();
+        flag = 1;
+    }
+    console.log('внутри=', age17Show);
+console.log(window.scrollY);
+
 }
+
+// бегуший текст------------------------------------------------
+const age17 = document.querySelector('.age-17');
+
+const age17Show = age17.getBoundingClientRect().bottom - document.documentElement.clientHeight;
+
+console.log('нашел !=', age17Show);
+
+function startTime(){
+    const elAge = document.getElementById('age');
+    let timeAge = Number(elAge.dataset.time);
+    let startAge = Number(elAge.dataset.start);
+    let endAge = Number(elAge.dataset.end);
+    
+    const elBurial = document.getElementById('burial');
+    let timeBurial = Number(elBurial.dataset.time);
+    let startBurial = Number(elBurial.dataset.start);
+    let endBurial = Number(elBurial.dataset.end);
+    
+    const elCremation = document.getElementById('cremation');
+    let timeCremation = Number(elCremation.dataset.time);
+    let startCremation = Number(elCremation.dataset.start);
+    let endCremation = Number(elCremation.dataset.end);
+    
+    timeText(timeCremation, startCremation, endCremation, elCremation);
+    timeText(timeAge, startAge, endAge, elAge);
+    timeText(timeBurial, startBurial, endBurial, elBurial);
+}
+
+function timeText (timeOff, startOff, endOff, el) {
+    const timeInterval = timeOff / endOff;
+    let step = 1;
+    if(timeInterval < 10){
+        let proc = Math.trunc(10 / timeInterval);
+        step = proc;
+    }
+    console.log('interval', timeInterval);
+    let timeOut =  setTimeout(timeText, timeInterval, timeOff, step + startOff, endOff, el);
+    if (startOff >= endOff) {
+        clearTimeout(timeOut);
+        startOff = endOff;
+    }
+    el.innerText = startOff + '+';
+    console.log(startOff);
+}
+
+
+
+
 
 
