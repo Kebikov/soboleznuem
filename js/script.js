@@ -64,7 +64,6 @@ const hoverAll = document.querySelectorAll('._sub');
 hoverAll.forEach(function (hover){
 hover.addEventListener('mouseover', hoverOver);
 hover.addEventListener('mouseout', hoverOut);
-console.log(hover);
 });
 
 function hoverOver (hover){
@@ -110,7 +109,7 @@ function hoverOver (hover){
     }
 
     const overLineSub = overParent.querySelectorAll('.header__line-sub');
-    overLineSub.forEach(function(e){
+        overLineSub.forEach(function(e){
         e.classList.add('hover-sub');
     });
 
@@ -122,7 +121,6 @@ function hoverOver (hover){
 }
 
 function hoverOut (hover){
-    console.log('оно=3');
     const out = hover.target;
     const outParent = out.closest('.header__line');
 
@@ -175,9 +173,6 @@ function listenerScroll () {
         startTime();
         flag = 1;
     }
-    console.log('внутри=', age17Show);
-console.log(window.scrollY);
-
 }
 
 // бегуший текст------------------------------------------------
@@ -185,13 +180,16 @@ const age17 = document.querySelector('.age-17');
 
 const age17Show = age17.getBoundingClientRect().bottom - document.documentElement.clientHeight;
 
-console.log('нашел !=', age17Show);
-
 function startTime(){
     const elAge = document.getElementById('age');
     let timeAge = Number(elAge.dataset.time);
     let startAge = Number(elAge.dataset.start);
     let endAge = Number(elAge.dataset.end);
+
+    const elAge1 = document.getElementById('age1');
+    let timeAge1 = Number(elAge1.dataset.time);
+    let startAge1 = Number(elAge1.dataset.start);
+    let endAge1 = Number(elAge1.dataset.end);
     
     const elBurial = document.getElementById('burial');
     let timeBurial = Number(elBurial.dataset.time);
@@ -205,24 +203,34 @@ function startTime(){
     
     timeText(timeCremation, startCremation, endCremation, elCremation);
     timeText(timeAge, startAge, endAge, elAge);
+    timeText(timeAge1, startAge1, endAge1, elAge1);
     timeText(timeBurial, startBurial, endBurial, elBurial);
 }
 
-function timeText (timeOff, startOff, endOff, el) {
-    const timeInterval = timeOff / endOff;
+
+function timeText (time, start, end, el) {
+    const timeInterval = time / end;
     let step = 1;
     if(timeInterval < 10){
         let proc = Math.trunc(10 / timeInterval);
         step = proc;
     }
-    console.log('interval', timeInterval);
-    let timeOut =  setTimeout(timeText, timeInterval, timeOff, step + startOff, endOff, el);
-    if (startOff >= endOff) {
+    let timeOut =  setTimeout(timeText, timeInterval, time, step + start, end, el);
+    if (start >= end) {
         clearTimeout(timeOut);
-        startOff = endOff;
+        start = end;
     }
-    el.innerText = startOff + '+';
-    console.log(startOff);
+    el.innerText = start + '+';
+}
+
+
+function test (one){
+        console.log(one);
+}
+
+//let one = 2;
+
+if(typeof myName != 'undefined'){
 }
 
 

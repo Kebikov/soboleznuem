@@ -557,6 +557,7 @@ $color_blue: #07111d;
         @media (max-width: 1120px){
             flex:0 1 100%;
             flex-direction: row;
+            align-items: flex-start;
         }
     }
 
