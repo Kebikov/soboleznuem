@@ -12,10 +12,10 @@ $color_blue: #07111d;
 
 
         @media (max-width: 1910px){
-            font-size: calc(19px + 8 * (100vw - 375px) / 1535);
+            font-size: calc(21px + 6 * (100vw - 375px) / 1535);
         }
         @media (max-width: 375px){
-            font-size: 19px;
+            font-size: 21px;
         }
 
         &_margin{
@@ -30,7 +30,7 @@ $color_blue: #07111d;
 
     &__line {
         position: relative;
-        margin: 0px 0px 15px 17px;
+        margin: 0px 0px 10px 17px;
         &::before{
             content: '';
             position: absolute;

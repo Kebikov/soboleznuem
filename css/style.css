@@ -1756,6 +1756,7 @@ body.active {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  width: 100%;
   color: #fff;
   font-family: "Yeseva One";
   font-size: 40px;
@@ -1849,13 +1850,13 @@ body.active {
 
 @media (max-width: 1910px) {
   .text-title {
-    font-size: calc(19px + 8 * (100vw - 375px) / 1535);
+    font-size: calc(21px + 6 * (100vw - 375px) / 1535);
   }
 }
 
 @media (max-width: 375px) {
   .text-title {
-    font-size: 19px;
+    font-size: 21px;
   }
 }
 
@@ -1865,7 +1866,7 @@ body.active {
 
 .text__line {
   position: relative;
-  margin: 0px 0px 15px 17px;
+  margin: 0px 0px 10px 17px;
 }
 
 .text__line::before {
@@ -2382,6 +2383,42 @@ body.active {
   .info__title {
     font-size: 17px;
   }
+}
+
+.tab {
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+  overflow: auto;
+}
+
+.tab td {
+  text-align: left;
+  border: #ba9f5a 1px solid;
+  padding: 15px 10px;
+  font-family: 'Montserrat';
+  font-size: 14px;
+  line-height: 150%;
+  font-weight: 500;
+  color: #5B5B5B;
+}
+
+.tab__table {
+  min-width: 1000px;
+  border: #ba9f5a 1px solid;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.tab__row_1 {
+  width: 30%;
+}
+
+.tab__row_2 {
+  width: 20%;
+}
+
+.tab__row_3 {
+  width: 20%;
 }
 
 .footer {

@@ -21,6 +21,8 @@ $color_blue: #07111d;
         z-index: 3;
         transform: translate(-50%, -50%);
 
+        width: 100%;
+
         color: #fff;
         font-family: "Yeseva One";
         font-size: 40px;
@@ -77,6 +79,7 @@ $color_blue: #07111d;
         @media (max-width: 375px){
             font-size: 16px;
         }
+        
         &_margin{
             margin: 0px 10px 0px 10px;
         }

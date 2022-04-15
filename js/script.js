@@ -153,8 +153,6 @@ function fnHeaderList (){
 fnHeaderList();
 //---
 
-let flag = 0;
-
 function listenerScroll () {
     // высота меню для скрола
     fnHeaderList();
@@ -168,17 +166,27 @@ function listenerScroll () {
         burger.classList.remove('fix-burger');
         headerList.classList.remove('fix-burger');
     }
-
-    if(window.scrollY >= age17Show && flag === 0){
-        startTime();
-        flag = 1;
-    }
 }
 
 // бегуший текст------------------------------------------------
+
 const age17 = document.querySelector('.age-17');
 
-const age17Show = age17.getBoundingClientRect().bottom - document.documentElement.clientHeight;
+if(age17){
+
+    window.addEventListener('scroll', numberScroll);
+    let flag = 0;
+    let age17Show = age17.getBoundingClientRect().bottom - document.documentElement.clientHeight;
+    console.log(age17Show);
+
+    function numberScroll () {
+        if(window.scrollY >= age17Show && flag === 0){
+            startTime();
+            flag = 1;
+            console.log('yes-1');
+        }
+    }
+}
 
 function startTime(){
     const elAge = document.getElementById('age');
@@ -221,6 +229,7 @@ function showText (time, start, end, el) {
     }
     el.innerText = start + '+';
 }
+//---
 
 
 
