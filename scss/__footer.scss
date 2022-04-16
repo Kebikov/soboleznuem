@@ -29,7 +29,7 @@ $color_blue: #07111d;
         
         object-fit: cover;
         
-        max-height: 100px;
+        height: auto;
         max-width: 100%;
     }
 
@@ -66,17 +66,17 @@ $color_blue: #07111d;
     // .footer__text-1
 
     &__text {
+        display: block;
         font-family: 'Montserrat';
         font-size: 17px;
         line-height: 140%;
         font-weight: 400;
         color: rgba(255, 255, 255, 0.582);
         text-align: center;
-        @media (max-width: 1910px){
-            font-size: calc(15px + 2 * (100vw - 750px) / 1180);
-        }
+
         @media (max-width: 750px){
-            font-size: 15px;
+            font-size: 20px;
+            margin:0px 0px 20px 0px;
         }
     }
 
