@@ -617,13 +617,19 @@ body.active {
           flex: 1 1 auto;
 }
 
+.container_img {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
 .coffin-img {
-  margin: 0 100px;
+  padding: 0px 20px 0px 20px;
 }
 
 @media (max-width: 1200px) {
   .coffin-img {
     margin: 0;
+    padding: 0;
   }
 }
 
