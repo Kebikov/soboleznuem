@@ -3,7 +3,7 @@ $color_text: #5B5B5B;
 $color_blue: #07111d;
 
 .container_img{
-    max-width: 1400px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
@@ -25,90 +25,68 @@ $color_blue: #07111d;
 
 //= блок соболезнуем 
 .box-text {
-    //max-width: 1400px;
+    max-width: 1400px;
+
     display: flex;
-
     align-items: center;
-
-    margin: 0px 0px 40px 0px;
-    
-    justify-content: flex-end;
-    
 
     // .box-text__span
     &__span {
-        flex: 0 1 30%;
+        flex: 0 1 35%;
 
         display: flex;
         justify-content: center;
         align-items: center;
 
-        padding: 0px 0px 25% 0px;
-
-        background-color: #ba9f5ae7;
-        margin: -100px 150px 0px 0px;
-
-        @media (max-width: 1500px){
-            flex: 0 1 40%;
-            
-        }
-        @media (max-width: 1500px){
-            flex: 0 1 50%;
-            
-        }
-        @media (max-width: 1200px){
-            flex: 0 1 80%;
-            padding: 0px 0px 15em 0px;
-            margin: -50px auto 0px auto;
-        }
-        @media (max-width: 770px){
-            flex: 0 1 80%;
-            padding: 0px 0px 15em 0px;
-            margin: -50px auto 0px auto;
-        }
-
-        position: relative;
-        &::before{
-            content: "Искренне соболезнуем Вам, если Вас коснулось горе. Предлагаем и оказываем Все виды ритуальных услуг на протяжении более, чем 17 лет.";
-            position: absolute;
-            top: 50%;
-            left: 0;
-
-            transform: translate(0, -50%);
-
-            padding:2em;
+        padding: 1.5em;
 
         font-family: 'Times New Roman', Times, serif;
-        font-size: 30px;
+        font-size: 27px;
         line-height: 140%;
         font-weight: 500;
         color: #fff;
         text-align: center;
 
+        //text
         @media (max-width: 1910px){
-            font-size: calc(17px + 13 * (100vw - 375px) / 1535);
+            font-size: calc(19px + 8 * (100vw - 375px) / 1535);
         }
         @media (max-width: 375px){
-            font-size: 17px;
+            font-size: 19px;
         }
 
+        //flex
+        @media (max-width: 1500px){
+            flex: 0 1 40%;
         }
-        &::after{
-            content: '';
-            position: absolute;
-            top: 20%;
-            left: 50%;
-
-            transform: translate(-50%, 0);
-
-            width: 30%;
-            height: 3px;
-            background-color: #fff;
-            @media (max-width: 600px){
-                height: 0;
-            }
+        @media (max-width: 1500px){
+            flex: 0 1 50%;
         }
+        @media (max-width: 1200px){
+            flex: 0 1 80%;
+        }
+        @media (max-width: 770px){
+            flex: 0 1 90%;
+        }      
     }
+}
+
+.box_margin{
+    margin: 0px auto 40px auto;
+
+    justify-content: flex-end;
+}
+
+.span_margin{
+    margin: -100px 100px 0px 0px;
+    background-color: #ba9f5ae7;
+
+    @media (max-width: 1200px){
+        margin: -50px auto 0px auto;
+    }
+    @media (max-width: 770px){
+        margin: -50px auto 0px auto;
+    } 
 }
 
 
@@ -122,10 +100,15 @@ $color_blue: #07111d;
 
     max-width: 1200px;
 
-    margin: -200px auto 20px auto;
+    margin: -100px auto -100px auto;
+
+    @media (max-width: 1500px){
+        margin: -100px auto 20px auto;
+    }
 
     @media (max-width: 1200px){
-        margin: 0px 20px 20px 20px;
+        margin: 0px;
+        padding: 0px 20px 20px 20px;
     }
 
     // .multi__item
@@ -136,7 +119,8 @@ $color_blue: #07111d;
 
         height: 100%;
 
-        @media (max-width: 1020px){
+        @media (max-width: 1100px){
+
             height: auto;
         }
 
@@ -159,13 +143,13 @@ $color_blue: #07111d;
 
     &_margin-2{
         margin: 200px 0px 0px 0px;
-        @media (max-width: 1020px){
+        @media (max-width: 1100px){
             margin: 0;
         }
     }
     &_margin-3{
         margin: 400px 0px 0px 0px;
-        @media (max-width: 1020px){
+        @media (max-width: 1100px){
             margin: 0;
         }
     }
@@ -231,179 +215,24 @@ $color_blue: #07111d;
 }
 
 //= блок соболезнуем 2 
-.box-text-2 {
-    display: flex;
+.box_margin-2{
+    margin: 0px auto 0px auto;
+}
 
-    align-items: center;
-
+.span_margin-2{
     position: relative;
     z-index: 2;
 
-    margin: 0px 0px 20px 0px;
-    
-    // .box-text__span
-    &__span-2 {
-        flex: 0 1 30%;
+    background-color: #000000bb;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        padding: 0px 0px 25% 0px;
-
-        background-color: rgba(0, 0, 0, 0.781);
-
-        margin: 0px 0px -100px 150px;
-
-        @media (max-width: 1500px){
-            flex: 0 1 40%;
-            
-        }
-        @media (max-width: 1500px){
-            flex: 0 1 50%;
-            
-        }
-        @media (max-width: 1200px){
-            flex: 0 1 80%;
-            padding: 0px 0px 15em 0px;
-            margin: 0px auto -100px auto;
-        }
-        @media (max-width: 770px){
-            flex: 0 1 80%;
-            padding: 0px 0px 15em 0px;
-            margin: 0px auto -100px auto;
-        }
-
-        position: relative;
-        &::before{
-            content: "Кроме финансовой составляющей, нами безусловно движет то, что люди благодарят нас за оказанные услуги и рекомендуют нас знакомым…";
-            position: absolute;
-            top: 50%;
-            left: 0;
-
-            transform: translate(0, -50%);
-
-            padding:2em;
-
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 30px;
-            line-height: 140%;
-            font-weight: 500;
-            color: #fff;
-            text-align: center;
-
-        @media (max-width: 1910px){
-            font-size: calc(16px + 14 * (100vw - 375px) / 1535);
-        }
-        @media (max-width: 375px){
-            font-size: 14px;
-        }
-
-        }
-        &::after{
-            content: '';
-            position: absolute;
-            top: 20%;
-            left: 50%;
-
-            transform: translate(-50%, 0);
-
-            width: 30%;
-            height: 3px;
-            background-color: #fff;
-            @media (max-width: 600px){
-                height: 0;
-            }
-        }
+    margin: 0px 0px -100px 100px;
+    @media (max-width: 1200px){
+        margin: 0px auto -50px auto;
     }
 }
 
 //= блок соболезнуем 3 
-.box-text-3 {
-    display: flex;
 
-    align-items: center;
-
-    margin: 0px 0px 40px 0px;
-    
-    justify-content: flex-end;
-    
-
-    // .box-text__span
-    &__span-3 {
-        flex: 0 1 30%;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        padding: 0px 0px 25% 0px;
-
-        background-color: #ba9f5ae7;
-        margin: -100px 150px 0px 0px;
-
-        @media (max-width: 1500px){
-            flex: 0 1 40%;
-            
-        }
-        @media (max-width: 1500px){
-            flex: 0 1 50%;
-            
-        }
-        @media (max-width: 1200px){
-            flex: 0 1 80%;
-            padding: 0px 0px 15em 0px;
-            margin: -50px auto 0px auto;
-        }
-        @media (max-width: 770px){
-            flex: 0 1 80%;
-            padding: 0px 0px 10em 0px;
-            margin: -50px auto 0px auto;
-        }
-
-        position: relative;
-        &::before{
-            content: "Если у Вас, есть какие-либо вопросы относительно наших услуг, пожалуйста, свяжитесь с нами.";
-            position: absolute;
-            top: 50%;
-            left: 0;
-
-            transform: translate(0, -50%);
-
-            padding: 1em 2em 1em 2em;
-
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 30px;
-        line-height: 140%;
-        font-weight: 500;
-        color: #fff;
-        text-align: center;
-
-        @media (max-width: 1910px){
-            font-size: calc(16px + 14 * (100vw - 375px) / 1535);
-        }
-        @media (max-width: 375px){
-            font-size: 14px;
-        }
-
-        }
-        &::after{
-            content: '';
-            position: absolute;
-            top: 20%;
-            left: 50%;
-
-            transform: translate(-50%, 0);
-
-            width: 30%;
-            height: 3px;
-            background-color: #fff;
-            @media (max-width: 600px){
-                height: 0;
-            }
-        }
-    }
-}
 
 //= age-17 
 .age-17 {
@@ -718,19 +547,10 @@ $color_blue: #07111d;
     }
 }
 
-
-
-
-
-
-
-
-
-
 //= prais 
 .box-prais {
     padding:20px 40px 20px 40px;
-
+    margin:0px 0px 40px 0px;
     background:rgb(99, 99, 99) url(../img/home/texture.jpg);
 }
 .prais {
