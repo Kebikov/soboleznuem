@@ -1,0 +1,236 @@
+$color_golg: #ba9f5a;
+$color_text: #5B5B5B;
+$color_blue: #07111d;
+
+
+.calc{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+.form{
+    flex:0 1 45%;
+}
+.title-coffin{
+    font-family: 'Montserrat';
+    line-height: 150%;
+    font-size: 20px;
+    font-weight: 500;
+    color: $color_text;
+}
+.coffin {
+    display: flex;
+    flex-direction: column;
+
+    &__tim{
+        display: flex;
+
+        align-items: center;
+
+        background-color: #fff;
+        border: $color_golg 2px solid;
+        color: $color_text;
+        margin:0px 0px 3px 0px;
+        border-radius: 7px;
+        height: 70px;
+        cursor: pointer;
+    }
+    &__tim-title{
+        
+    }
+
+    & span{
+        text-align: center;
+        font-family: 'Montserrat';
+        font-size: 20px;
+        font-weight: 500;
+        color: $color_golg;
+        padding: 0px 0px 0px 20px;
+        position: relative;
+        //after
+        &::after{
+            content: '';
+            position: absolute;
+            top: -3px;
+            right: -30px;
+            width: 30px;
+            height: 30px;
+            background:url(../img/icon-v.png) 0 0 / cover no-repeat;
+        }
+    }
+
+    &__img-tim{
+        object-fit: cover;
+        height: 50px;
+        width: auto;
+    }
+
+    // .coffin__item
+    &__item{
+        display: flex;
+        align-items: center;
+        height: 0px;
+        padding: 0px 0px 0px 0px;
+        transition: all 0.2s ease;
+        //active
+        &.active{
+        display: flex;
+        margin:0px 0px 1px 0px;
+        border-radius: 5px;
+        background-color: #fff;
+        border: $color_golg 2px solid;
+        height: 70px;
+        cursor: pointer;
+        }
+    }
+
+    // .coffin__label
+    &__label {
+        display: inline-block;
+        font-family: 'Montserrat';
+        font-size: 0px;
+        font-weight: 500;
+        color: $color_text;
+        padding: 20px 0px 20px 20px;
+        
+        cursor: pointer;
+        //active
+        &.active{
+            font-size: 20px;
+        }
+    }
+    
+    &__img{
+        height: 0px;
+        //active
+        &.active{
+        object-fit: cover;
+        height: 100%;
+        width: auto;
+        transition: all 0.2s ease;
+        }
+    }
+}
+.wreath {
+    display: flex;
+    flex-direction: column;
+
+    &__tim{
+        display: flex;
+
+        align-items: center;
+
+        background-color: #fff;
+        border: $color_golg 2px solid;
+        color: $color_text;
+        margin:0px 0px 3px 0px;
+        border-radius: 7px;
+        height: 70px;
+        cursor: pointer;
+    }
+    &__tim-title{
+        
+    }
+
+    & span{
+        text-align: center;
+        font-family: 'Montserrat';
+        font-size: 20px;
+        font-weight: 500;
+        color: $color_golg;
+        padding: 0px 0px 0px 20px;
+        position: relative;
+        //after
+        &::after{
+            content: '';
+            position: absolute;
+            top: -3px;
+            right: -30px;
+            width: 30px;
+            height: 30px;
+            background:url(../img/icon-v.png) 0 0 / cover no-repeat;
+        }
+    }
+
+    &__img-tim{
+        object-fit: cover;
+        height: 50px;
+        width: auto;
+    }
+
+    // .coffin__item
+    &__item{
+        display: flex;
+        align-items: center;
+        height: 0px;
+        padding: 0px 0px 0px 0px;
+        transition: all 0.2s ease;
+        //active
+        &.active{
+        display: flex;
+        margin:0px 0px 1px 0px;
+        border-radius: 5px;
+        background-color: #fff;
+        border: $color_golg 2px solid;
+        height: 70px;
+        cursor: pointer;
+        }
+    }
+
+    // .coffin__label
+    &__label {
+        display: inline-block;
+        font-family: 'Montserrat';
+        font-size: 0px;
+        font-weight: 500;
+        color: $color_text;
+        padding: 20px 0px 20px 20px;
+        
+        cursor: pointer;
+        //active
+        &.active{
+            font-size: 20px;
+        }
+    }
+    
+    &__img{
+        height: 0px;
+        //active
+        &.active{
+        object-fit: cover;
+        height: 100%;
+        width: auto;
+        transition: all 0.2s ease;
+        }
+    }
+}
+
+.more{
+    background-color: $color_golg;
+    color: #fff;
+    padding: 20px 0px 20px 0px;
+    font-size: 20px;
+    text-align: center;
+    margin:0px 0px 20px 0px;
+    cursor: pointer;
+}
+
+.praice{
+    background-color: $color_blue;
+    color: #fff;
+    padding: 20px 0px 20px 0px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.shop-calc{
+    flex: 0 1 45%;
+    &__title{
+        font-family: 'Montserrat';
+    line-height: 150%;
+    font-size: 20px;
+    font-weight: 500;
+    color: $color_golg;
+    }
+}

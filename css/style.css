@@ -2545,6 +2545,276 @@ body.active {
   }
 }
 
+.calc {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.form {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 45%;
+          flex: 0 1 45%;
+}
+
+.title-coffin {
+  font-family: 'Montserrat';
+  line-height: 150%;
+  font-size: 20px;
+  font-weight: 500;
+  color: #5B5B5B;
+}
+
+.coffin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.coffin__tim {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  border: #ba9f5a 2px solid;
+  color: #5B5B5B;
+  margin: 0px 0px 3px 0px;
+  border-radius: 7px;
+  height: 70px;
+  cursor: pointer;
+}
+
+.coffin span {
+  text-align: center;
+  font-family: 'Montserrat';
+  font-size: 20px;
+  font-weight: 500;
+  color: #ba9f5a;
+  padding: 0px 0px 0px 20px;
+  position: relative;
+}
+
+.coffin span::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  right: -30px;
+  width: 30px;
+  height: 30px;
+  background: url(../img/icon-v.png) 0 0/cover no-repeat;
+}
+
+.coffin__img-tim {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 50px;
+  width: auto;
+}
+
+.coffin__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 0px;
+  padding: 0px 0px 0px 0px;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.coffin__item.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0px 0px 1px 0px;
+  border-radius: 5px;
+  background-color: #fff;
+  border: #ba9f5a 2px solid;
+  height: 70px;
+  cursor: pointer;
+}
+
+.coffin__label {
+  display: inline-block;
+  font-family: 'Montserrat';
+  font-size: 0px;
+  font-weight: 500;
+  color: #5B5B5B;
+  padding: 20px 0px 20px 20px;
+  cursor: pointer;
+}
+
+.coffin__label.active {
+  font-size: 20px;
+}
+
+.coffin__img {
+  height: 0px;
+}
+
+.coffin__img.active {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: auto;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.wreath {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wreath__tim {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  border: #ba9f5a 2px solid;
+  color: #5B5B5B;
+  margin: 0px 0px 3px 0px;
+  border-radius: 7px;
+  height: 70px;
+  cursor: pointer;
+}
+
+.wreath span {
+  text-align: center;
+  font-family: 'Montserrat';
+  font-size: 20px;
+  font-weight: 500;
+  color: #ba9f5a;
+  padding: 0px 0px 0px 20px;
+  position: relative;
+}
+
+.wreath span::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  right: -30px;
+  width: 30px;
+  height: 30px;
+  background: url(../img/icon-v.png) 0 0/cover no-repeat;
+}
+
+.wreath__img-tim {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 50px;
+  width: auto;
+}
+
+.wreath__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 0px;
+  padding: 0px 0px 0px 0px;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.wreath__item.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0px 0px 1px 0px;
+  border-radius: 5px;
+  background-color: #fff;
+  border: #ba9f5a 2px solid;
+  height: 70px;
+  cursor: pointer;
+}
+
+.wreath__label {
+  display: inline-block;
+  font-family: 'Montserrat';
+  font-size: 0px;
+  font-weight: 500;
+  color: #5B5B5B;
+  padding: 20px 0px 20px 20px;
+  cursor: pointer;
+}
+
+.wreath__label.active {
+  font-size: 20px;
+}
+
+.wreath__img {
+  height: 0px;
+}
+
+.wreath__img.active {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: auto;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.more {
+  background-color: #ba9f5a;
+  color: #fff;
+  padding: 20px 0px 20px 0px;
+  font-size: 20px;
+  text-align: center;
+  margin: 0px 0px 20px 0px;
+  cursor: pointer;
+}
+
+.praice {
+  background-color: #07111d;
+  color: #fff;
+  padding: 20px 0px 20px 0px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.shop-calc {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 45%;
+          flex: 0 1 45%;
+}
+
+.shop-calc__title {
+  font-family: 'Montserrat';
+  line-height: 150%;
+  font-size: 20px;
+  font-weight: 500;
+  color: #ba9f5a;
+}
+
 .footer {
   display: -webkit-box;
   display: -ms-flexbox;
