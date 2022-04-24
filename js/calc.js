@@ -1,3 +1,7 @@
+//возврат текстом объекта венки
+const wreathForm = document.querySelector('.wreath');
+const wreathText = wreathForm.outerHTML;
+
 document.addEventListener('click', function (e){
     const element = e.target;
     console.log(element);
@@ -22,7 +26,7 @@ document.addEventListener('click', function (e){
         const textCoffin = textParent.querySelector('.coffin__label').innerHTML;
         const cashCoffin = textParent.querySelector('.coffin__label').dataset.cash;
         const title = mainParent.querySelector('.coffin__tim-title');
-        mainParent.querySelector('.coffin__tim-title').dataset.cash = cashCoffin;
+        mainParent.querySelector('.coffin__tim-title').dataset.all = cashCoffin;
         mainParent.querySelector('.coffin__img-tim').setAttribute('src', imgCoffinSrc);
         title.innerHTML = textCoffin;
 
@@ -53,7 +57,7 @@ document.addEventListener('click', function (e){
         const textCoffin = textParent.querySelector('.wreath__label').innerHTML;
         const cashCoffin = textParent.querySelector('.wreath__label').dataset.cash;
         const title = mainParent.querySelector('.wreath__tim-title');
-        mainParent.querySelector('.wreath__tim-title').dataset.cash = cashCoffin;
+        mainParent.querySelector('.wreath__tim-title').dataset.all = cashCoffin;
         mainParent.querySelector('.wreath__img-tim').setAttribute('src', imgCoffinSrc);
         title.innerHTML = textCoffin;
 
@@ -65,39 +69,23 @@ document.addEventListener('click', function (e){
     }
 
 
-
-
-
-
-
-
-
     if(element.closest('.more')){
+        //начало дороботки
+        const pered = element.previousElementSibling;
+        const class = pered.parentElement;
+        console.log(class);
+        //конец 
         const parent = document.querySelectorAll('.wreath');
-        parent[parent.length - 1].insertAdjacentHTML('afterend',`<div class="coffin">
-        <div class="coffin__tim">
-            <img class="coffin__img-tim" src="/img/coffin.png" alt="#">
-            <span class="coffin__tim-title" data-cash="0">Выбор гроба</span>
-        </div>
-        <div class="coffin__item">
-            <img class="coffin__img" src="/img/coffin.png" alt="#">
-            <div class="coffin__label" data-cash="500">Гроб лакированный</div>
-        </div>
-        <div class="coffin__item">
-            <img class="coffin__img" src="/img/coffin.png" alt="#">
-            <div class="coffin__label" data-cash="300">Гроб тканевый</div>
-        </div>
-        <div class="coffin__item">
-            <img class="coffin__img" src="/img/coffin.png" alt="#">
-            <div class="coffin__label" data-cash="100">Гроб соцыальный</div>
-        </div>
-    </div>`,);
+        parent[parent.length - 1].insertAdjacentHTML('afterend',wreathText);
     }
 
+
+
+    //= подсчет 
     let cash = 0;
-    const allCoffinCashElements = document.querySelectorAll('.coffin__tim-title');
+    const allCoffinCashElements = document.querySelectorAll('[data-all]');
     for(let i of allCoffinCashElements){
-        const iCash = i.dataset.cash;
+        const iCash = i.dataset.all;
         cash = cash + iCash*1;
     } 
     

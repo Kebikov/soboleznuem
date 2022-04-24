@@ -2786,7 +2786,8 @@ body.active {
 .more {
   background-color: #ba9f5a;
   color: #fff;
-  padding: 20px 0px 20px 0px;
+  padding: 10px 0px 10px 0px;
+  border-radius: 7px;
   font-size: 20px;
   text-align: center;
   margin: 0px 0px 20px 0px;
