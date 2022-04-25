@@ -2569,7 +2569,7 @@ body.active {
   color: #5B5B5B;
 }
 
-.coffin {
+.wreath, .dress, .cross, .coffin {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2577,9 +2577,10 @@ body.active {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin: 0px 0px 20px 0px;
 }
 
-.coffin__tim {
+.wreath__tim, .dress__tim, .cross__tim, .coffin__tim {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2595,7 +2596,7 @@ body.active {
   cursor: pointer;
 }
 
-.coffin span {
+.wreath span, .dress span, .cross span, .coffin span {
   text-align: center;
   font-family: 'Montserrat';
   font-size: 20px;
@@ -2605,7 +2606,7 @@ body.active {
   position: relative;
 }
 
-.coffin span::after {
+.wreath span::after, .dress span::after, .cross span::after, .coffin span::after {
   content: '';
   position: absolute;
   top: -3px;
@@ -2615,14 +2616,14 @@ body.active {
   background: url(../img/icon-v.png) 0 0/cover no-repeat;
 }
 
-.coffin__img-tim {
+.wreath__img-tim, .dress__img-tim, .cross__img-tim, .coffin__img-tim {
   -o-object-fit: cover;
      object-fit: cover;
   height: 50px;
   width: auto;
 }
 
-.coffin__item {
+.wreath__item, .dress__item, .cross__item, .coffin__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2636,7 +2637,7 @@ body.active {
   transition: all 0.2s ease;
 }
 
-.coffin__item.active {
+.wreath__item.active, .dress__item.active, .cross__item.active, .coffin__item.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2648,7 +2649,7 @@ body.active {
   cursor: pointer;
 }
 
-.coffin__label {
+.wreath__label, .dress__label, .cross__label, .coffin__label {
   display: inline-block;
   font-family: 'Montserrat';
   font-size: 0px;
@@ -2658,122 +2659,15 @@ body.active {
   cursor: pointer;
 }
 
-.coffin__label.active {
+.wreath__label.active, .dress__label.active, .cross__label.active, .coffin__label.active {
   font-size: 20px;
 }
 
-.coffin__img {
+.wreath__img, .dress__img, .cross__img, .coffin__img {
   height: 0px;
 }
 
-.coffin__img.active {
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 100%;
-  width: auto;
-  -webkit-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-}
-
-.wreath, .dress, .cross {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.wreath__tim, .dress__tim, .cross__tim {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #fff;
-  border: #ba9f5a 2px solid;
-  color: #5B5B5B;
-  margin: 0px 0px 3px 0px;
-  border-radius: 7px;
-  height: 70px;
-  cursor: pointer;
-}
-
-.wreath span, .dress span, .cross span {
-  text-align: center;
-  font-family: 'Montserrat';
-  font-size: 20px;
-  font-weight: 500;
-  color: #ba9f5a;
-  padding: 0px 0px 0px 20px;
-  position: relative;
-}
-
-.wreath span::after, .dress span::after, .cross span::after {
-  content: '';
-  position: absolute;
-  top: -3px;
-  right: -30px;
-  width: 30px;
-  height: 30px;
-  background: url(../img/icon-v.png) 0 0/cover no-repeat;
-}
-
-.wreath__img-tim, .dress__img-tim, .cross__img-tim {
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 50px;
-  width: auto;
-}
-
-.wreath__item, .dress__item, .cross__item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 0px;
-  padding: 0px 0px 0px 0px;
-  -webkit-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-}
-
-.wreath__item.active, .dress__item.active, .cross__item.active {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0px 0px 1px 0px;
-  border-radius: 5px;
-  background-color: #fff;
-  border: #ba9f5a 2px solid;
-  height: 70px;
-  cursor: pointer;
-}
-
-.wreath__label, .dress__label, .cross__label {
-  display: inline-block;
-  font-family: 'Montserrat';
-  font-size: 0px;
-  font-weight: 500;
-  color: #5B5B5B;
-  padding: 20px 0px 20px 20px;
-  cursor: pointer;
-}
-
-.wreath__label.active, .dress__label.active, .cross__label.active {
-  font-size: 20px;
-}
-
-.wreath__img, .dress__img, .cross__img {
-  height: 0px;
-}
-
-.wreath__img.active, .dress__img.active, .cross__img.active {
+.wreath__img.active, .dress__img.active, .cross__img.active, .coffin__img.active {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;
@@ -2795,11 +2689,38 @@ body.active {
 }
 
 .praice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #07111d;
   color: #fff;
   padding: 20px 0px 20px 0px;
-  font-size: 20px;
+  font-size: 24px;
   text-align: center;
+  width: 100%;
+  height: 50px;
+  border-bottom: #ba9f5a 2px solid;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  z-index: 300;
+}
+
+.praice.stiki {
+  position: absolute;
+  top: -50px;
+  left: 0;
+}
+
+.padding {
+  width: 100%;
+  padding: 100px 0px 0px 0px;
 }
 
 .shop-calc {
@@ -2901,6 +2822,7 @@ body.active {
       flex-wrap: wrap;
   padding: 20px 40px 20px 40px;
   background-color: #07111d;
+  position: relative;
 }
 
 .footer__item-img {

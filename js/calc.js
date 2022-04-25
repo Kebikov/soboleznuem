@@ -1,4 +1,5 @@
 
+
 //находим раздел с выбранными товарами
 let shopForm = document.querySelector('.shop-calc__title');
 
@@ -268,8 +269,94 @@ document.addEventListener('click', function (e){
             </div>
         </div>`
         );
+    }//end 
 
+    //= Крест 
+    if(element.closest('.cross__tim')){
+        const elementParent = element.closest('.cross');
+        const coffinItems = elementParent.querySelectorAll('.cross__item, .cross__img, .cross__label');
+        for(let i of coffinItems){
+            i.classList.toggle('active');
+        }
     }
+
+    //= клик на выборе креста 
+    if(element.closest('.cross__item')){
+        //новое значение id
+        idTotal++;
+        console.log('idTotal:',idTotal);
+
+        //получение главного родителя 
+        const mainParent = element.closest('.cross');
+
+        //получение текушего значения data-total
+        let dataTotal = mainParent.dataset.total;
+        console.log('dataTotal:',dataTotal);
+
+        //проверка на сушествование id
+        if(!dataTotal){
+            console.log('not');
+            //новое значение data-total
+            mainParent.dataset.total =  idTotal;
+            dataTotal = mainParent.dataset.total;
+        }
+
+        const textParent = element.closest('.cross__item');
+        const imgCoffinElement = textParent.querySelector('.cross__img');
+        const imgCoffinSrc = imgCoffinElement.getAttribute('src');
+        const textCoffin = textParent.querySelector('.cross__label').innerHTML;
+        const cashCoffin = textParent.querySelector('.cross__label').dataset.cash;
+        const title = mainParent.querySelector('.cross__tim-title');
+        //mainParent.querySelector('.dress__tim-title').dataset.all = cashCoffin;
+        mainParent.querySelector('.cross__img-tim').setAttribute('src', imgCoffinSrc);
+        title.innerHTML = textCoffin;
+
+        const elementParent = element.closest('.cross');
+        const coffinItems = elementParent.querySelectorAll('.cross__item, .cross__img, .cross__label');
+        for(let i of coffinItems){
+            i.classList.remove('active');
+        }
+
+        //возврат эл магазин
+        const shopForm = document.querySelector('.shop-calc');
+
+        //возврат последнего эл в магазине
+        let lastElementShop = shopForm.lastElementChild;
+        console.log('lastElementShop',lastElementShop);
+
+         //удаляем товар если уже есть в списке
+        //поиск совпадения в выборе и магазине
+        if(document.querySelector(`[data-shop = "${dataTotal}"]`)){
+            //возврат эл магазина
+            const shopElement = document.querySelector(`[data-shop = "${dataTotal}"]`);
+            //возврат эл перед 
+            const shopElementPrevious = shopElement.previousSibling;
+            //удаление элемента
+            shopElement.remove();
+            //замена эл после которого будет вставлен новый эл
+            lastElementShop = shopElementPrevious;
+
+            console.log('shopElementPrevious:',shopElementPrevious);
+            console.log('search Yes');
+        }
+
+        //добавление эл в магазин(не меняем переменные внутри)
+        lastElementShop.insertAdjacentHTML(
+            'afterend',
+            `<div class="shop-calc__list" data-shop="${dataTotal}" data-shop-cash = "${cashCoffin}">
+            <div class="shop-calc__img-box">
+                <img src="${imgCoffinSrc}" alt="#">
+            </div>
+            <div class="shop-calc__info">
+                <div class="shop-calc__text">${textCoffin}</div>
+                <div class="shop-calc__cash">стоимость: ${cashCoffin} byn</div>
+            </div>
+            <div class="shop-calc__delete">
+                <img src="/img/__calc/delete_icon.png" alt="#">
+            </div>
+        </div>`
+        );
+    }//end
 
     //= click delete
     if(element.closest('.shop-calc__delete')){
@@ -365,6 +452,7 @@ document.addEventListener('click', function (e){
                 </div>
             </div>`);
         }
+
     }
 
 
@@ -375,72 +463,22 @@ document.addEventListener('click', function (e){
         const iCash = i.dataset.shopCash;
         cash = cash + iCash*1;
     } 
-    document.querySelector('.praice').innerHTML = `Итого: ${cash}`;
+    document.querySelector('.praice').innerHTML = `Всего: ${cash} руб.`;
 });
 
 
 
+//= прилипание praice 
+//возврат эл прайс для крепления в слушателе  и высоты экрана
+const praiceEl = document.querySelector('.praice');
+const footerEl = document.querySelector('.footer');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+window.addEventListener('scroll', function (){
+    if(footerEl.getBoundingClientRect().top - document.documentElement.clientHeight <= 0){
+        praiceEl.classList.add('stiki');
+    }else{
+        praiceEl.classList.remove('stiki'); 
+    }
+});
 
 
