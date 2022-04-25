@@ -225,13 +225,75 @@ $color_blue: #07111d;
     text-align: center;
 }
 
-.shop-calc{
+.shop-calc {
     flex: 0 1 45%;
-    &__title{
-        font-family: 'Montserrat';
+
+
+    // .shop-calc__title
+
+    &__title {
+    font-family: 'Montserrat';
     line-height: 150%;
     font-size: 20px;
     font-weight: 500;
     color: $color_golg;
+    }
+
+    // .shop-calc__list
+
+    &__list {
+        display: flex;
+        align-items: center;
+        height: 100px;
+        border-bottom: $color_golg 1px solid;
+    }
+
+    // .shop-calc__img
+    &__img-box {
+        flex: 0 1 30%;
+        padding-bottom: 15%;
+        position: relative;
+        & img {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    // .shop-calc__info
+    &__info {
+        flex: 0 1 60%;
+        padding: 0px 0px 0px 20px;
+    }
+
+    &__text{
+        font-family: 'Montserrat';
+        line-height: 150%;
+        font-size: 20px;
+        font-weight: 500;
+        color: $color_text;
+    }
+
+    // .shop-calc__cash
+    &__cash {
+        font-family: 'Montserrat';
+        line-height: 150%;
+        font-size: 17px;
+        font-weight: 500;
+        color: $color_text;
+    }
+
+    &__delete{
+        flex: 0 1 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        & img {
+            height: 30px;
+        }
     }
 }

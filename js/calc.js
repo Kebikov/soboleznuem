@@ -2,9 +2,15 @@
 const wreathForm = document.querySelector('.wreath');
 const wreathText = wreathForm.outerHTML;
 
+//находим раздел с выбранными товарами
+let shopForm = document.querySelector('.shop-calc__title');
+
+let idTotal = 0; 
+
+
 document.addEventListener('click', function (e){
     const element = e.target;
-    console.log(element);
+    console.log('клик по:',element);
     
     //= гроб
     if(element.closest('.coffin__tim')){
@@ -15,26 +21,65 @@ document.addEventListener('click', function (e){
         }
     }
 
+    //клик на выбор гроба
     if(element.closest('.coffin__item')){
-        //lll
+        
         const mainParent = element.closest('.coffin');
+        mainParent.dataset.total = idTotal;
         const textParent = element.closest('.coffin__item');
 
         const imgCoffinElement = textParent.querySelector('.coffin__img');
+
         const imgCoffinSrc = imgCoffinElement.getAttribute('src');
 
         const textCoffin = textParent.querySelector('.coffin__label').innerHTML;
+
         const cashCoffin = textParent.querySelector('.coffin__label').dataset.cash;
+
         const title = mainParent.querySelector('.coffin__tim-title');
+
         mainParent.querySelector('.coffin__tim-title').dataset.all = cashCoffin;
+
         mainParent.querySelector('.coffin__img-tim').setAttribute('src', imgCoffinSrc);
+
         title.innerHTML = textCoffin;
 
+
+        //удаляем товар если уже есть в списке
+        const shopFormNew = document.querySelector('.shop-calc__list');
+        let idDataTotal = shopFormNew.dataset.total; 
+        if(shopFormNew){
+            const shopFormNewPrevious = shopFormNew.previousElementSibling;
+            shopForm = shopFormNewPrevious;
+            shopFormNew.remove();
+        }
+    
+
+        //добавляем новый элемент в выбранные товары
+        shopForm.insertAdjacentHTML(
+            'afterend',
+            `<div class="shop-calc__list" data-total="${idTotal}">
+            <div class="shop-calc__img-box">
+                <img src="${imgCoffinSrc}" alt="#">
+            </div>
+            <div class="shop-calc__info">
+                <div class="shop-calc__text">${textCoffin}</div>
+                <div class="shop-calc__cash">стоимость: ${cashCoffin} byn</div>
+            </div>
+            <div class="shop-calc__delete">
+                <img src="/img/__calc/delete_icon.png" alt="#">
+            </div>
+        </div>`
+        );
+
+
+        //удаляем классы active
         const elementParent = element.closest('.coffin');
         const coffinItems = elementParent.querySelectorAll('.coffin__item, .coffin__img, .coffin__label');
         for(let i of coffinItems){
             i.classList.remove('active');
         }
+
     }
 
     //= Венки
@@ -46,8 +91,9 @@ document.addEventListener('click', function (e){
         }
     }
 
+    //клик на выбор венка
     if(element.closest('.wreath__item')){
-        //lll
+        idTotal++;
         const mainParent = element.closest('.wreath');
         const textParent = element.closest('.wreath__item');
 
@@ -69,16 +115,18 @@ document.addEventListener('click', function (e){
     }
 
 
+    //= кнопка еще 
     if(element.closest('.more')){
-        //начало дороботки
-        const pered = element.previousElementSibling;
-        const class = pered.parentElement;
-        console.log(class);
-        //конец 
-        const parent = document.querySelectorAll('.wreath');
-        parent[parent.length - 1].insertAdjacentHTML('afterend',wreathText);
-    }
 
+        const previous = element.previousElementSibling;
+        const classMy = previous.classList;
+        classMy.value
+        if(classMy.value === 'wreath'){
+            const parent = document.querySelectorAll('.wreath');
+        parent[parent.length - 1].insertAdjacentHTML('afterend',wreathText);
+        }
+        idTotal++;
+    }
 
 
     //= подсчет 
@@ -88,11 +136,7 @@ document.addEventListener('click', function (e){
         const iCash = i.dataset.all;
         cash = cash + iCash*1;
     } 
-    
     document.querySelector('.praice').innerHTML = `Итого: ${cash}`;
-    
-
-    
 });
 
 

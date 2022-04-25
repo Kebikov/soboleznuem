@@ -2816,6 +2816,80 @@ body.active {
   color: #ba9f5a;
 }
 
+.shop-calc__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100px;
+  border-bottom: #ba9f5a 1px solid;
+}
+
+.shop-calc__img-box {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 30%;
+          flex: 0 1 30%;
+  padding-bottom: 15%;
+  position: relative;
+}
+
+.shop-calc__img-box img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.shop-calc__info {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 60%;
+          flex: 0 1 60%;
+  padding: 0px 0px 0px 20px;
+}
+
+.shop-calc__text {
+  font-family: 'Montserrat';
+  line-height: 150%;
+  font-size: 20px;
+  font-weight: 500;
+  color: #5B5B5B;
+}
+
+.shop-calc__cash {
+  font-family: 'Montserrat';
+  line-height: 150%;
+  font-size: 17px;
+  font-weight: 500;
+  color: #5B5B5B;
+}
+
+.shop-calc__delete {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 10%;
+          flex: 0 1 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.shop-calc__delete img {
+  height: 30px;
+}
+
 .footer {
   display: -webkit-box;
   display: -ms-flexbox;
