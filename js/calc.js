@@ -45,7 +45,7 @@ document.addEventListener('click', function (e){
         const textCoffin = textParent.querySelector('.coffin__label').innerHTML;
         const cashCoffin = textParent.querySelector('.coffin__label').dataset.cash;
         const title = mainParent.querySelector('.coffin__tim-title');
-        mainParent.querySelector('.coffin__tim-title').dataset.all = cashCoffin;
+        //mainParent.querySelector('.coffin__tim-title').dataset.all = cashCoffin;
         mainParent.querySelector('.coffin__img-tim').setAttribute('src', imgCoffinSrc);
         title.innerHTML = textCoffin;
 
@@ -72,7 +72,7 @@ document.addEventListener('click', function (e){
         //добавляем новый элемент в выбранные товары
         lastElementShop.insertAdjacentHTML(
             'afterend',
-            `<div class="shop-calc__list" data-shop="${numCoffin}">
+            `<div class="shop-calc__list" data-shop="${numCoffin}" data-shop-cash = "${cashCoffin}">
             <div class="shop-calc__img-box">
                 <img src="${imgCoffinSrc}" alt="#">
             </div>
@@ -132,7 +132,7 @@ document.addEventListener('click', function (e){
         const textCoffin = textParent.querySelector('.wreath__label').innerHTML;
         const cashCoffin = textParent.querySelector('.wreath__label').dataset.cash;
         const title = mainParent.querySelector('.wreath__tim-title');
-        mainParent.querySelector('.wreath__tim-title').dataset.all = cashCoffin;
+        //mainParent.querySelector('.wreath__tim-title').dataset.all = cashCoffin;
         mainParent.querySelector('.wreath__img-tim').setAttribute('src', imgCoffinSrc);
         title.innerHTML = textCoffin;
 
@@ -168,7 +168,94 @@ document.addEventListener('click', function (e){
         //добавление эл в магазин
         lastElementShop.insertAdjacentHTML(
             'afterend',
-            `<div class="shop-calc__list" data-shop="${dataTotal}">
+            `<div class="shop-calc__list" data-shop="${dataTotal}" data-shop-cash = "${cashCoffin}">
+            <div class="shop-calc__img-box">
+                <img src="${imgCoffinSrc}" alt="#">
+            </div>
+            <div class="shop-calc__info">
+                <div class="shop-calc__text">${textCoffin}</div>
+                <div class="shop-calc__cash">стоимость: ${cashCoffin} byn</div>
+            </div>
+            <div class="shop-calc__delete">
+                <img src="/img/__calc/delete_icon.png" alt="#">
+            </div>
+        </div>`
+        );
+    }
+
+    //= Одежда 
+    if(element.closest('.dress__tim')){
+        const elementParent = element.closest('.dress');
+        const coffinItems = elementParent.querySelectorAll('.dress__item, .dress__img, .dress__label');
+        for(let i of coffinItems){
+            i.classList.toggle('active');
+        }
+    }
+
+    //= клик на выборе одежды 
+    if(element.closest('.dress__item')){
+        //новое значение id
+        idTotal++;
+        console.log('idTotal:',idTotal);
+
+        //получение главного родителя 
+        const mainParent = element.closest('.dress');
+
+        //получение текушего значения data-total
+        let dataTotal = mainParent.dataset.total;
+        console.log('dataTotal:',dataTotal);
+
+        //проверка на сушествование id
+        if(!dataTotal){
+            console.log('not');
+            //новое значение data-total
+            mainParent.dataset.total =  idTotal;
+            dataTotal = mainParent.dataset.total;
+        }
+
+        const textParent = element.closest('.dress__item');
+        const imgCoffinElement = textParent.querySelector('.dress__img');
+        const imgCoffinSrc = imgCoffinElement.getAttribute('src');
+        const textCoffin = textParent.querySelector('.dress__label').innerHTML;
+        const cashCoffin = textParent.querySelector('.dress__label').dataset.cash;
+        const title = mainParent.querySelector('.dress__tim-title');
+        //mainParent.querySelector('.dress__tim-title').dataset.all = cashCoffin;
+        mainParent.querySelector('.dress__img-tim').setAttribute('src', imgCoffinSrc);
+        title.innerHTML = textCoffin;
+
+        const elementParent = element.closest('.dress');
+        const coffinItems = elementParent.querySelectorAll('.dress__item, .dress__img, .dress__label');
+        for(let i of coffinItems){
+            i.classList.remove('active');
+        }
+
+        //возврат эл магазин
+        const shopForm = document.querySelector('.shop-calc');
+
+        //возврат последнего эл в магазине
+        let lastElementShop = shopForm.lastElementChild;
+        console.log('lastElementShop',lastElementShop);
+
+         //удаляем товар если уже есть в списке
+        //поиск совпадения в выборе и магазине
+        if(document.querySelector(`[data-shop = "${dataTotal}"]`)){
+            //возврат эл магазина
+            const shopElement = document.querySelector(`[data-shop = "${dataTotal}"]`);
+            //возврат эл перед 
+            const shopElementPrevious = shopElement.previousSibling;
+            //удаление элемента
+            shopElement.remove();
+            //замена эл после которого будет вставлен новый эл
+            lastElementShop = shopElementPrevious;
+
+            console.log('shopElementPrevious:',shopElementPrevious);
+            console.log('search Yes');
+        }
+
+        //добавление эл в магазин(не меняем переменные внутри)
+        lastElementShop.insertAdjacentHTML(
+            'afterend',
+            `<div class="shop-calc__list" data-shop="${dataTotal}" data-shop-cash = "${cashCoffin}">
             <div class="shop-calc__img-box">
                 <img src="${imgCoffinSrc}" alt="#">
             </div>
@@ -218,6 +305,7 @@ document.addEventListener('click', function (e){
 
     //= кнопка еще 
     if(element.closest('.more')){
+        console.log('добавить еще');
         //возврат элемента перед кнопкой
         const previous = element.previousElementSibling;
 
@@ -250,14 +338,41 @@ document.addEventListener('click', function (e){
             </div>`);
         }
 
+        //если одужда добавляем эл одежда
+        if(classMy === 'dress'){
+            const parent = document.querySelectorAll('.dress');
+            parent[parent.length - 1].insertAdjacentHTML('afterend',`<div class="title-coffin">Комплект одежды для усопшего:</div>
+            <div class="dress" data-total="${idTotal}">
+                <div class="dress__tim">
+                    <img class="dress__img-tim" src="/img/__calc/dress/dress-icon.png" alt="#" data-img="/img/__calc/dress/dress-icon.png">
+                    <span class="dress__tim-title" data-all="0" data-title="Выбор одежды">Выбор одежды</span>
+                </div>
+                <div class="dress__item">
+                    <img class="dress__img" src="/img/__calc/dress/1.jpg" alt="#">
+                    <div class="dress__label" data-cash="53">Костюм женский</div>
+                </div>
+                <div class="dress__item">
+                    <img class="dress__img" src="/img/__calc/dress/2.jpg" alt="#">
+                    <div class="dress__label" data-cash="35">Обувь женская</div>
+                </div>
+                <div class="dress__item">
+                    <img class="dress__img" src="/img/__calc/dress/3.jpg" alt="#">
+                    <div class="dress__label" data-cash="46">Костюм мужской</div>
+                </div>
+                <div class="dress__item">
+                    <img class="dress__img" src="/img/__calc/dress/4.jpg" alt="#">
+                    <div class="dress__label" data-cash="37">Туфли мужские</div>
+                </div>
+            </div>`);
+        }
     }
 
 
     //= подсчет 
     let cash = 0;
-    const allCoffinCashElements = document.querySelectorAll('[data-all]');
+    const allCoffinCashElements = document.querySelectorAll('[data-shop-cash]');
     for(let i of allCoffinCashElements){
-        const iCash = i.dataset.all;
+        const iCash = i.dataset.shopCash;
         cash = cash + iCash*1;
     } 
     document.querySelector('.praice').innerHTML = `Итого: ${cash}`;

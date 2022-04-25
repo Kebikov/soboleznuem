@@ -2676,7 +2676,7 @@ body.active {
   transition: all 0.2s ease;
 }
 
-.wreath, .dress {
+.wreath, .dress, .cross {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2686,7 +2686,7 @@ body.active {
           flex-direction: column;
 }
 
-.wreath__tim, .dress__tim {
+.wreath__tim, .dress__tim, .cross__tim {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2702,7 +2702,7 @@ body.active {
   cursor: pointer;
 }
 
-.wreath span, .dress span {
+.wreath span, .dress span, .cross span {
   text-align: center;
   font-family: 'Montserrat';
   font-size: 20px;
@@ -2712,7 +2712,7 @@ body.active {
   position: relative;
 }
 
-.wreath span::after, .dress span::after {
+.wreath span::after, .dress span::after, .cross span::after {
   content: '';
   position: absolute;
   top: -3px;
@@ -2722,14 +2722,14 @@ body.active {
   background: url(../img/icon-v.png) 0 0/cover no-repeat;
 }
 
-.wreath__img-tim, .dress__img-tim {
+.wreath__img-tim, .dress__img-tim, .cross__img-tim {
   -o-object-fit: cover;
      object-fit: cover;
   height: 50px;
   width: auto;
 }
 
-.wreath__item, .dress__item {
+.wreath__item, .dress__item, .cross__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2743,7 +2743,7 @@ body.active {
   transition: all 0.2s ease;
 }
 
-.wreath__item.active, .dress__item.active {
+.wreath__item.active, .dress__item.active, .cross__item.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2755,7 +2755,7 @@ body.active {
   cursor: pointer;
 }
 
-.wreath__label, .dress__label {
+.wreath__label, .dress__label, .cross__label {
   display: inline-block;
   font-family: 'Montserrat';
   font-size: 0px;
@@ -2765,15 +2765,15 @@ body.active {
   cursor: pointer;
 }
 
-.wreath__label.active, .dress__label.active {
+.wreath__label.active, .dress__label.active, .cross__label.active {
   font-size: 20px;
 }
 
-.wreath__img, .dress__img {
+.wreath__img, .dress__img, .cross__img {
   height: 0px;
 }
 
-.wreath__img.active, .dress__img.active {
+.wreath__img.active, .dress__img.active, .cross__img.active {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;
