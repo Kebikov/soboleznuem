@@ -2676,7 +2676,7 @@ body.active {
   transition: all 0.2s ease;
 }
 
-.wreath {
+.wreath, .dress {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2686,7 +2686,7 @@ body.active {
           flex-direction: column;
 }
 
-.wreath__tim {
+.wreath__tim, .dress__tim {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2702,7 +2702,7 @@ body.active {
   cursor: pointer;
 }
 
-.wreath span {
+.wreath span, .dress span {
   text-align: center;
   font-family: 'Montserrat';
   font-size: 20px;
@@ -2712,7 +2712,7 @@ body.active {
   position: relative;
 }
 
-.wreath span::after {
+.wreath span::after, .dress span::after {
   content: '';
   position: absolute;
   top: -3px;
@@ -2722,14 +2722,14 @@ body.active {
   background: url(../img/icon-v.png) 0 0/cover no-repeat;
 }
 
-.wreath__img-tim {
+.wreath__img-tim, .dress__img-tim {
   -o-object-fit: cover;
      object-fit: cover;
   height: 50px;
   width: auto;
 }
 
-.wreath__item {
+.wreath__item, .dress__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2743,7 +2743,7 @@ body.active {
   transition: all 0.2s ease;
 }
 
-.wreath__item.active {
+.wreath__item.active, .dress__item.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2755,7 +2755,7 @@ body.active {
   cursor: pointer;
 }
 
-.wreath__label {
+.wreath__label, .dress__label {
   display: inline-block;
   font-family: 'Montserrat';
   font-size: 0px;
@@ -2765,15 +2765,15 @@ body.active {
   cursor: pointer;
 }
 
-.wreath__label.active {
+.wreath__label.active, .dress__label.active {
   font-size: 20px;
 }
 
-.wreath__img {
+.wreath__img, .dress__img {
   height: 0px;
 }
 
-.wreath__img.active {
+.wreath__img.active, .dress__img.active {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;

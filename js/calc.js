@@ -1,11 +1,9 @@
-//возврат текстом объекта венки
-const wreathForm = document.querySelector('.wreath');
-const wreathText = wreathForm.outerHTML;
 
 //находим раздел с выбранными товарами
 let shopForm = document.querySelector('.shop-calc__title');
 
-let idTotal = 0; 
+let idTotal = 0;
+let numCoffin, numWreath;
 
 
 document.addEventListener('click', function (e){
@@ -21,43 +19,60 @@ document.addEventListener('click', function (e){
         }
     }
 
-    //клик на выбор гроба
+    //= клик на выбор гроба
     if(element.closest('.coffin__item')){
-        
+        //новое значение id
+        idTotal++;
+
+        //получение главного родителя 
         const mainParent = element.closest('.coffin');
-        mainParent.dataset.total = idTotal;
+
+        //получение текушего значения data-total
+        let dataTotal = mainParent.dataset.total;
+
+        //проверка на сушествование id
+        if(!dataTotal){
+            console.log('not');
+            numCoffin = idTotal;
+        }
+
+        //новое значение data-total
+        mainParent.dataset.total = numCoffin;
+
         const textParent = element.closest('.coffin__item');
-
         const imgCoffinElement = textParent.querySelector('.coffin__img');
-
         const imgCoffinSrc = imgCoffinElement.getAttribute('src');
-
         const textCoffin = textParent.querySelector('.coffin__label').innerHTML;
-
         const cashCoffin = textParent.querySelector('.coffin__label').dataset.cash;
-
         const title = mainParent.querySelector('.coffin__tim-title');
-
         mainParent.querySelector('.coffin__tim-title').dataset.all = cashCoffin;
-
         mainParent.querySelector('.coffin__img-tim').setAttribute('src', imgCoffinSrc);
-
         title.innerHTML = textCoffin;
 
+        //возврат эл магазин
+        const shopForm = document.querySelector('.shop-calc');
+
+        //возврат последнего эл в магазине
+        let lastElementShop = shopForm.lastElementChild;
 
         //удаляем товар если уже есть в списке
-        const shopFormNew = document.querySelector('.shop-calc__list');
-        if(shopFormNew){
-            const shopFormNewPrevious = shopFormNew.previousElementSibling;
-            shopForm = shopFormNewPrevious;
-            shopFormNew.remove();
+        //поиск совпадения в выборе и магазине
+        if(document.querySelector(`[data-shop = "${dataTotal}"]`)){
+            //возврат эл магазина
+            const shopElement = document.querySelector(`[data-shop = "${dataTotal}"]`);
+            //возврат эл перед 
+            const shopElementPrevious = shopElement.previousSibling;
+            //удаление элемента
+            shopElement.remove();
+            //замена эл после которого будет вставлен новый эл
+            lastElementShop = shopElementPrevious;
+            numCoffin = dataTotal;
         }
-    
 
         //добавляем новый элемент в выбранные товары
-        shopForm.insertAdjacentHTML(
+        lastElementShop.insertAdjacentHTML(
             'afterend',
-            `<div class="shop-calc__list" data-total="${idTotal}">
+            `<div class="shop-calc__list" data-shop="${numCoffin}">
             <div class="shop-calc__img-box">
                 <img src="${imgCoffinSrc}" alt="#">
             </div>
@@ -71,6 +86,7 @@ document.addEventListener('click', function (e){
         </div>`
         );
 
+        
 
         //удаляем классы active
         const elementParent = element.closest('.coffin');
@@ -78,7 +94,6 @@ document.addEventListener('click', function (e){
         for(let i of coffinItems){
             i.classList.remove('active');
         }
-
     }
 
     //= Венки
@@ -90,15 +105,30 @@ document.addEventListener('click', function (e){
         }
     }
 
-    //клик на выбор венка
+    //= клик на выборе венка
     if(element.closest('.wreath__item')){
+        //новое значение id
         idTotal++;
-        const mainParent = element.closest('.wreath');
-        const textParent = element.closest('.wreath__item');
+        console.log('idTotal:',idTotal);
 
+        //получение главного родителя 
+        const mainParent = element.closest('.wreath');
+
+        //получение текушего значения data-total
+        let dataTotal = mainParent.dataset.total;
+        console.log('dataTotal:',dataTotal);
+
+        //проверка на сушествование id
+        if(!dataTotal){
+            console.log('not');
+            //новое значение data-total
+            mainParent.dataset.total =  idTotal;
+            dataTotal = mainParent.dataset.total;
+        }
+
+        const textParent = element.closest('.wreath__item');
         const imgCoffinElement = textParent.querySelector('.wreath__img');
         const imgCoffinSrc = imgCoffinElement.getAttribute('src');
-
         const textCoffin = textParent.querySelector('.wreath__label').innerHTML;
         const cashCoffin = textParent.querySelector('.wreath__label').dataset.cash;
         const title = mainParent.querySelector('.wreath__tim-title');
@@ -111,20 +141,115 @@ document.addEventListener('click', function (e){
         for(let i of coffinItems){
             i.classList.remove('active');
         }
+
+        //возврат эл магазин
+        const shopForm = document.querySelector('.shop-calc');
+
+        //возврат последнего эл в магазине
+        let lastElementShop = shopForm.lastElementChild;
+        console.log('lastElementShop',lastElementShop);
+
+         //удаляем товар если уже есть в списке
+        //поиск совпадения в выборе и магазине
+        if(document.querySelector(`[data-shop = "${dataTotal}"]`)){
+            //возврат эл магазина
+            const shopElement = document.querySelector(`[data-shop = "${dataTotal}"]`);
+            //возврат эл перед 
+            const shopElementPrevious = shopElement.previousSibling;
+            //удаление элемента
+            shopElement.remove();
+            //замена эл после которого будет вставлен новый эл
+            lastElementShop = shopElementPrevious;
+
+            console.log('shopElementPrevious:',shopElementPrevious);
+            console.log('search Yes');
+        }
+
+        //добавление эл в магазин
+        lastElementShop.insertAdjacentHTML(
+            'afterend',
+            `<div class="shop-calc__list" data-shop="${dataTotal}">
+            <div class="shop-calc__img-box">
+                <img src="${imgCoffinSrc}" alt="#">
+            </div>
+            <div class="shop-calc__info">
+                <div class="shop-calc__text">${textCoffin}</div>
+                <div class="shop-calc__cash">стоимость: ${cashCoffin} byn</div>
+            </div>
+            <div class="shop-calc__delete">
+                <img src="/img/__calc/delete_icon.png" alt="#">
+            </div>
+        </div>`
+        );
+
+    }
+
+    //= click delete
+    if(element.closest('.shop-calc__delete')){
+        console.log('click delete');
+
+        //возврат эл в магазине
+        const searchElementShop = element.closest('.shop-calc__list');
+
+        //возврат значения атрибута который удаляем
+        let idSearch = searchElementShop.dataset.shop;
+
+        //удаление эл
+        searchElementShop.remove();
+
+        //возврат элемента по значению атрибута
+        const searchTotalElement = document.querySelector(`[data-total = "${idSearch}"]`);
+        console.log('searchTotalElement:',searchTotalElement);
+
+        //возврат элементов по атрибуту
+        const searchImgDefault = searchTotalElement.querySelector('[data-img]');
+        const searchTitleDefault = searchTotalElement.querySelector('[data-title]');
+
+        //возврат значений атрибутов
+        let titleData = searchTitleDefault.dataset.title;
+        let imgData = searchImgDefault.dataset.img;
+
+        //присвоение значений атрибутам по умолчанию
+        searchImgDefault.setAttribute('src', `${imgData}`);
+        searchTitleDefault.textContent = `${titleData}`;
+
     }
 
 
     //= кнопка еще 
     if(element.closest('.more')){
-
+        //возврат элемента перед кнопкой
         const previous = element.previousElementSibling;
-        const classMy = previous.classList;
-        classMy.value
-        if(classMy.value === 'wreath'){
-            const parent = document.querySelectorAll('.wreath');
-        parent[parent.length - 1].insertAdjacentHTML('afterend',wreathText);
-        }
+
+        //возврат класса элемента
+        const classMy = previous.classList.value;
         idTotal++;
+        console.log('idTotal for:',idTotal);
+
+        //если венки добавляем эл венки
+        if(classMy === 'wreath'){
+            const parent = document.querySelectorAll('.wreath');
+            parent[parent.length - 1].insertAdjacentHTML('afterend',`<div class="title-coffin">Ваш выбор ритуального венка:</div>
+            <div class="wreath" data-total="${idTotal}">
+                <div class="wreath__tim">
+                    <img class="wreath__img-tim" src="/img/__calc/wreath/icon.png" alt="#" data-img="/img/__calc/wreath/icon.png">
+                    <span class="wreath__tim-title" data-all="0" data-title="Выбор венка">Выбор венка</span>
+                </div>
+                <div class="wreath__item">
+                    <img class="wreath__img" src="/img/__calc/wreath/1.png" alt="#">
+                    <div class="wreath__label" data-cash="70">Венок ритуальный (1.7 метра)</div>
+                </div>
+                <div class="wreath__item">
+                    <img class="wreath__img" src="/img/__calc/wreath/2.png" alt="#">
+                    <div class="wreath__label" data-cash="50">Венок ритуальный (1.5 метра)</div>
+                </div>
+                <div class="wreath__item">
+                    <img class="wreath__img" src="/img/__calc/wreath/3.png" alt="#">
+                    <div class="wreath__label" data-cash="30">Венок ритуальный (1.3 метра)</div>
+                </div>
+            </div>`);
+        }
+
     }
 
 
