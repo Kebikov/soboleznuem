@@ -47,7 +47,6 @@ document.addEventListener('click', function (e){
 
         //удаляем товар если уже есть в списке
         const shopFormNew = document.querySelector('.shop-calc__list');
-        let idDataTotal = shopFormNew.dataset.total; 
         if(shopFormNew){
             const shopFormNewPrevious = shopFormNew.previousElementSibling;
             shopForm = shopFormNewPrevious;
