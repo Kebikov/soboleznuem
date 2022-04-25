@@ -1,5 +1,4 @@
 
-
 //находим раздел с выбранными товарами
 let shopForm = document.querySelector('.shop-calc__title');
 
@@ -9,9 +8,9 @@ let numCoffin, numWreath;
 
 document.addEventListener('click', function (e){
     const element = e.target;
-    console.log('клик по:',element);
+    //console.log('клик по:',element);
     
-    //= гроб
+    //= гроб 
     if(element.closest('.coffin__tim')){
         const elementParent = element.closest('.coffin');
         const coffinItems = elementParent.querySelectorAll('.coffin__item, .coffin__img, .coffin__label');
@@ -19,8 +18,7 @@ document.addEventListener('click', function (e){
             i.classList.toggle('active');
         }
     }
-
-    //= клик на выбор гроба
+    // клик на выбор гроба
     if(element.closest('.coffin__item')){
         //новое значение id
         idTotal++;
@@ -97,7 +95,7 @@ document.addEventListener('click', function (e){
         }
     }
 
-    //= Венки
+    //= Венки 
     if(element.closest('.wreath__tim')){
         const elementParent = element.closest('.wreath');
         const coffinItems = elementParent.querySelectorAll('.wreath__item, .wreath__img, .wreath__label');
@@ -105,8 +103,7 @@ document.addEventListener('click', function (e){
             i.classList.toggle('active');
         }
     }
-
-    //= клик на выборе венка
+    // клик на выборе венка
     if(element.closest('.wreath__item')){
         //новое значение id
         idTotal++;
@@ -192,8 +189,7 @@ document.addEventListener('click', function (e){
             i.classList.toggle('active');
         }
     }
-
-    //= клик на выборе одежды 
+    // клик на выборе одежды 
     if(element.closest('.dress__item')){
         //новое значение id
         idTotal++;
@@ -279,8 +275,7 @@ document.addEventListener('click', function (e){
             i.classList.toggle('active');
         }
     }
-
-    //= клик на выборе креста 
+    // клик на выборе креста 
     if(element.closest('.cross__item')){
         //новое значение id
         idTotal++;
@@ -356,9 +351,9 @@ document.addEventListener('click', function (e){
             </div>
         </div>`
         );
-    }//end
+    }
 
-    //= click delete
+    //= click delete select 
     if(element.closest('.shop-calc__delete')){
         console.log('click delete');
 
@@ -388,7 +383,6 @@ document.addEventListener('click', function (e){
         searchTitleDefault.textContent = `${titleData}`;
 
     }
-
 
     //= кнопка еще 
     if(element.closest('.more')){
@@ -455,8 +449,7 @@ document.addEventListener('click', function (e){
 
     }
 
-
-    //= подсчет 
+    //= подсчет итога 
     let cash = 0;
     const allCoffinCashElements = document.querySelectorAll('[data-shop-cash]');
     for(let i of allCoffinCashElements){
@@ -464,6 +457,36 @@ document.addEventListener('click', function (e){
         cash = cash + iCash*1;
     } 
     document.querySelector('.praice').innerHTML = `Всего: ${cash} руб.`;
+
+});
+
+//= check box 
+//получение формы calc
+const formCalc = document.forms.calc;
+
+
+document.addEventListener('click', function (e) {
+    const elementCheck = e.target;
+
+    console.log('',elementCheck);
+
+    if(!elementCheck.closest('.stop')){
+        let divParent = elementCheck.parentElement;
+        let divInput = divParent.querySelector('input');
+        
+        if(divInput){
+            if(formCalc.loader.checked){
+                console.log('чек отмечен',);
+            }else{
+                console.log('чек не отмечен',);
+            }
+        }
+
+    }
+
+
+        
+    
 });
 
 
@@ -472,7 +495,6 @@ document.addEventListener('click', function (e){
 //возврат эл прайс для крепления в слушателе  и высоты экрана
 const praiceEl = document.querySelector('.praice');
 const footerEl = document.querySelector('.footer');
-
 window.addEventListener('scroll', function (){
     if(footerEl.getBoundingClientRect().top - document.documentElement.clientHeight <= 0){
         praiceEl.classList.add('stiki');
