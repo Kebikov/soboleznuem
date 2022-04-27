@@ -468,8 +468,6 @@ const formCalc = document.forms.calc;
 document.addEventListener('click', function (e) {
     const elementCheck = e.target;
 
-    console.log('',elementCheck);
-
     if(!elementCheck.closest('.stop')){
         let divParent = elementCheck.parentElement;
         let divInput = divParent.querySelector('input');
@@ -477,6 +475,8 @@ document.addEventListener('click', function (e) {
         if(divInput){
             if(formCalc.loader.checked){
                 console.log('чек отмечен',);
+
+                
             }else{
                 console.log('чек не отмечен',);
             }
