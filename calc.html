@@ -123,11 +123,10 @@
             </div>
 
             <div class="calc">
-
                 <form class="form" name="calc" action="#" method="get">
-
+                    
                     <!--= Гробы -->
-                    <div class="title-coffin">Ваш выбор гроба:</div>
+                    <div class="title-calc">Ваш выбор гроба:</div>
                     <div class="coffin" data-total="">
                         <div class="coffin__tim">
                             <img class="coffin__img-tim" src="/img/__calc/coffin/coffin-icon.png" alt="#" data-img="/img/__calc/coffin/coffin-icon.png">
@@ -148,7 +147,7 @@
                     </div>
 
                     <!--= Венки -->
-                    <div class="title-coffin">Ваш выбор ритуального венка:</div>
+                    <div class="title-calc">Ваш выбор ритуального венка:</div>
                     <div class="wreath" data-total="">
                         <div class="wreath__tim">
                             <img class="wreath__img-tim" src="/img/__calc/wreath/icon.png" alt="#" data-img="/img/__calc/wreath/icon.png">
@@ -170,7 +169,7 @@
                     <div class="more">добавить еще</div>
 
                     <!--= Комплект одежды -->
-                    <div class="title-coffin">Комплект одежды для усопшего:</div>
+                    <div class="title-calc">Комплект одежды для усопшего:</div>
                     <div class="dress" data-total="">
                         <div class="dress__tim">
                             <img class="dress__img-tim" src="/img/__calc/dress/dress-icon.png" alt="#" data-img="/img/__calc/dress/dress-icon.png">
@@ -196,7 +195,7 @@
                     <div class="more">добавить еще</div>
 
                     <!--= Крест -->
-                    <div class="title-coffin">Ваш выбор ритуального креста:</div>
+                    <div class="title-calc">Ваш выбор ритуального креста:</div>
                     <div class="cross" data-total="">
                         <div class="cross__tim">
                             <img class="cross__img-tim" src="/img/__calc/cross/cross-icon.png" alt="#" data-img="/img/__calc/cross/cross-icon.png">
@@ -217,17 +216,31 @@
                     </div>
 
                     <!--= Грузчики -->
-                    <div class="title-coffin">Похоронная бригада:</div>
-                    <div class="loader" data-praice="100" data-check-id="loader">
+                    <div class="title-calc">Похоронная бригада:</div>
+                    <div class="loader start" data-praice="100" data-check-id="loader">
                         <input class="loader__input" id="loader" type="checkbox" name="loader" value="100">
-                        <label class="loader__title stop" for="loader">Услуги грузчиков 4-чел для сопровождения похорон</label>
+                        <label class="loader__title stop" for="loader">Услуги грузчиков 4-чел для сопровождения похорон;</label>
                     </div>
                     
-                    <!--= Товар -->
-                    <div class="title-coffin">Доставка товара:</div>
-                    <div class="delivery" data-praice="80" data-check-id="delivery">
+                    <!--= Доставка товара -->
+                    <div class="title-calc">Доставка товара:</div>
+                    <div class="delivery start" data-praice="80" data-check-id="delivery">
                         <input class="delivery__input" id="delivery" type="checkbox" name="delivery" value="80">
-                        <label class="delivery__title stop" for="delivery">Доставка гроба и товаров</label>
+                        <label class="delivery__title stop" for="delivery">Доставка гроба и товаров;</label>
+                    </div>
+
+                    <!--= Копка могилы -->
+                    <div class="title-calc">Копка могилы:</div>
+                    <div class="digging start" data-praice="200" data-check-id="digging">
+                        <input class="digging__input" id="digging" type="checkbox" name="digging" value="200">
+                        <label class="digging__title stop" for="digging">Копка могилы, опускание гроба, формирование холма;</label>
+                    </div>
+
+                    <!--= Транспорт -->
+                    <div class="title-calc">Транспорт:</div>
+                    <div class="transport start" data-praice="180" data-check-id="transport">
+                        <input class="transport__input" id="transport" type="checkbox" name="transport" value="180">
+                        <label class="transport__title stop" for="transport">Перевозка к месту захоронения;</label>
                     </div>
                 </form>
 

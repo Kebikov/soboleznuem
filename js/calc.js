@@ -10,6 +10,7 @@ let numCoffin, numWreath;
 
 document.addEventListener('click', function (e){
     const element = e.target;
+    console.log('element',element);
     
     //= гроб 
     if(element.closest('.coffin__tim')){
@@ -338,14 +339,16 @@ document.addEventListener('click', function (e){
     if(element.closest('.more')){
         //возврат элемента перед кнопкой
         const previous = element.previousElementSibling;
-
+        console.log('previous',previous);
         //возврат класса элемента
         const classMy = previous.classList.value;
+        console.log('classMy',classMy);
         idTotal++;
         //если венки добавляем эл венки
         if(classMy === 'wreath'){
             const parent = document.querySelectorAll('.wreath');
-            parent[parent.length - 1].insertAdjacentHTML('afterend',`<div class="title-coffin">Ваш выбор ритуального венка:</div>
+            console.log('parent',parent);
+            parent[parent.length - 1].insertAdjacentHTML('afterend',`<div class="title-calc">Ваш выбор ритуального венка:</div>
             <div class="wreath" data-total="${idTotal}">
                 <div class="wreath__tim">
                     <img class="wreath__img-tim" src="/img/__calc/wreath/icon.png" alt="#" data-img="/img/__calc/wreath/icon.png">
@@ -369,7 +372,7 @@ document.addEventListener('click', function (e){
         //если одужда добавляем эл одежда
         if(classMy === 'dress'){
             const parent = document.querySelectorAll('.dress');
-            parent[parent.length - 1].insertAdjacentHTML('afterend',`<div class="title-coffin">Комплект одежды для усопшего:</div>
+            parent[parent.length - 1].insertAdjacentHTML('afterend',`<div class="title-calc">Комплект одежды для усопшего:</div>
             <div class="dress" data-total="${idTotal}">
                 <div class="dress__tim">
                     <img class="dress__img-tim" src="/img/__calc/dress/dress-icon.png" alt="#" data-img="/img/__calc/dress/dress-icon.png">
@@ -396,7 +399,7 @@ document.addEventListener('click', function (e){
     }
 
     //= check box  
-    if(!element.closest('.stop')){
+    if(!element.closest('.stop') && element.closest('.start')){
         // воз эл родителя цели
         let divParent = element.parentElement;
         //воз зн data-check-id
@@ -465,7 +468,11 @@ document.addEventListener('click', function (e){
 //= прилипание praice 
 //возврат эл прайс для крепления в слушателе  и высоты экрана
 const praiceEl = document.querySelector('.praice');
+
 const footerEl = document.querySelector('.footer');
+
+let scrollWindows = footerEl.getBoundingClientRect().top - document.documentElement.clientHeight;
+console.log('scrollWindows',scrollWindows);
 window.addEventListener('scroll', function (){
     if(footerEl.getBoundingClientRect().top - document.documentElement.clientHeight <= 0){
         praiceEl.classList.add('stiki');

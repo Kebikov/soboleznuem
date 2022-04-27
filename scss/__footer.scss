@@ -12,9 +12,7 @@ $color_blue: #07111d;
     background-color: $color_blue;
 
     position: relative;
-
     // .footer__item-img
-
     &__item-img {
         flex: 0 1 25%;
         display: flex;
@@ -26,7 +24,6 @@ $color_blue: #07111d;
     }
 
     // .footer__img
-
     &__img {
         
         object-fit: cover;
@@ -36,7 +33,6 @@ $color_blue: #07111d;
     }
 
     // .footer__item
-
     &__item {
         flex: 0 1 25%;
         @media (max-width: 1020px){
@@ -49,7 +45,6 @@ $color_blue: #07111d;
     }
 
     // .footer__title
-
     &__title {
         font-family: 'Montserrat';
         font-size: 27px;
@@ -66,7 +61,6 @@ $color_blue: #07111d;
     }
 
     // .footer__text-1
-
     &__text {
         display: block;
         font-family: 'Montserrat';
