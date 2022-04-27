@@ -2855,6 +2855,80 @@ body.active {
   background: url(../img/__calc/check-icon.png) 0 0/cover no-repeat;
 }
 
+.check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100px;
+  border-bottom: #ba9f5a 1px solid;
+}
+
+.check__img {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 30%;
+          flex: 0 1 30%;
+  padding-bottom: 15%;
+  position: relative;
+}
+
+.check__img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 40%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.check__info {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 60%;
+          flex: 0 1 60%;
+}
+
+.check__title {
+  font-family: 'Montserrat';
+  line-height: 150%;
+  font-size: 20px;
+  font-weight: 500;
+  color: #5B5B5B;
+}
+
+.check__praice {
+  font-family: 'Montserrat';
+  line-height: 150%;
+  font-size: 17px;
+  font-weight: 500;
+  color: #5B5B5B;
+}
+
+.check__del {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 10%;
+          flex: 0 1 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.check__del img {
+  height: 30px;
+}
+
 .footer {
   display: -webkit-box;
   display: -ms-flexbox;

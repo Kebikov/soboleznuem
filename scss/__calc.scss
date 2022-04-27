@@ -160,7 +160,6 @@ $color_blue: #07111d;
 .shop-calc {
     flex: 0 1 48%;
 
-
     // .shop-calc__title
 
     &__title {
@@ -172,7 +171,6 @@ $color_blue: #07111d;
     }
 
     // .shop-calc__list
-
     &__list {
         display: flex;
         align-items: center;
@@ -275,6 +273,64 @@ $color_blue: #07111d;
             opacity: 0;
 
             background:url(../img/__calc/check-icon.png) 0 0 / cover no-repeat;
+        }
+    }
+}
+
+.check {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: 100px;
+    border-bottom: $color_golg 1px solid;
+
+    // .check__img
+    &__img {
+        flex: 0 1 30%;
+        padding-bottom: 15%;
+        position: relative;
+        & img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 40%;
+            object-fit: cover;
+        }
+    }
+
+    // .check__info
+    &__info {
+        flex: 0 1 60%;
+    }
+
+    // .check__title
+    &__title {
+        font-family: 'Montserrat';
+        line-height: 150%;
+        font-size: 20px;
+        font-weight: 500;
+        color: $color_text;
+    }
+
+    // .check__praice
+    &__praice {
+        font-family: 'Montserrat';
+        line-height: 150%;
+        font-size: 17px;
+        font-weight: 500;
+        color: $color_text;
+    }
+
+    // .check__del
+    &__del {
+        flex: 0 1 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        & img {
+            height: 30px;
         }
     }
 }
