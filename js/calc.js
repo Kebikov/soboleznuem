@@ -73,7 +73,7 @@ document.addEventListener('click', function (e){
             </div>
             <div class="shop-calc__info">
                 <div class="shop-calc__text">${textCoffin}</div>
-                <div class="shop-calc__cash">стоимость: ${cashCoffin} byn</div>
+                <div class="shop-calc__cash">стоимость: ${cashCoffin} руб.</div>
             </div>
             <div class="shop-calc__delete">
                 <img src="/img/__calc/delete_icon.png" alt="#">
@@ -155,7 +155,7 @@ document.addEventListener('click', function (e){
             </div>
             <div class="shop-calc__info">
                 <div class="shop-calc__text">${textCoffin}</div>
-                <div class="shop-calc__cash">стоимость: ${cashCoffin} byn</div>
+                <div class="shop-calc__cash">стоимость: ${cashCoffin} руб.</div>
             </div>
             <div class="shop-calc__delete">
                 <img src="/img/__calc/delete_icon.png" alt="#">
@@ -228,7 +228,7 @@ document.addEventListener('click', function (e){
             </div>
             <div class="shop-calc__info">
                 <div class="shop-calc__text">${textCoffin}</div>
-                <div class="shop-calc__cash">стоимость: ${cashCoffin} byn</div>
+                <div class="shop-calc__cash">стоимость: ${cashCoffin} руб.</div>
             </div>
             <div class="shop-calc__delete">
                 <img src="/img/__calc/delete_icon.png" alt="#">
@@ -298,7 +298,7 @@ document.addEventListener('click', function (e){
             </div>
             <div class="shop-calc__info">
                 <div class="shop-calc__text">${textCoffin}</div>
-                <div class="shop-calc__cash">стоимость: ${cashCoffin} byn</div>
+                <div class="shop-calc__cash">стоимость: ${cashCoffin} руб.</div>
             </div>
             <div class="shop-calc__delete">
                 <img src="/img/__calc/delete_icon.png" alt="#">
@@ -409,7 +409,6 @@ document.addEventListener('click', function (e){
         let lastElementShop = shopForm.lastElementChild;
         if(divInput){
             if(divInput.checked){
-                console.log('чек отмечен',);
                 //воз эл лейбл
                 let lableText = divLable.textContent;
                 //воз за цена
@@ -421,24 +420,34 @@ document.addEventListener('click', function (e){
                 </div>
                 <div class="check__info">
                     <div class="check__title">${lableText}</div>
-                    <div class="check__praice">стоимость: ${cashCheck} byn</div>
+                    <div class="check__praice">стоимость: ${cashCheck} руб.</div>
                 </div>
                 <div class="check__del">
                     <img src="/img/__calc/delete_icon.png" alt="">
                 </div>
             </div>`);
             }else{
-                console.log('чек не отмечен',);
                 //воз зн имени input
                 let nameInput = divInput.getAttribute('name');
-                shopForm.querySelector(`[data-check-id="${nameInput}"]`).remove();
-                
+                if(shopForm.querySelector(`[data-check-id="${nameInput}"]`)){
+                    shopForm.querySelector(`[data-check-id="${nameInput}"]`).remove();
+                }
             }
         }
-
     }
     //удаление чекбокс при нажатии на корзину
+    if(element.closest('.check')){
+        //воз зн поля data-check-id
+        let valueCheckId = element.closest('.check').dataset.checkId;
+        //находим в shopForm эл по атрибуту и удаляем его
+        shopForm.querySelector(`[data-check-id="${valueCheckId}"]`).remove();
+        //нах эл по классу, в нем нах эл input
+        let checkFormInput = document.querySelector(`.${valueCheckId}`).querySelector('input');
+        //чекбокс по дефолту
+        checkFormInput.checked = false;
+    };
 
+    
 
     //= подсчет итога 
     let cash = 0;

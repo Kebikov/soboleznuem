@@ -213,7 +213,9 @@ $color_blue: #07111d;
         line-height: 150%;
         font-size: 17px;
         font-weight: 500;
-        color: $color_text;
+        color: #fff;
+        background-color: $color_golg;
+        text-align: center;
     }
 
     &__delete{
@@ -228,15 +230,19 @@ $color_blue: #07111d;
     }
 }
 
-.loader {
+.loader, .delivery {
     display: flex;
     padding: 10px 0px 0px 20px;
+    margin:0px 0px 20px 0px;
 
     // .loader__input
 
     &__input {
         opacity: 0;
         &:checked + .loader__title::after {
+            opacity: 1;
+        }
+        &:checked + .delivery__title::after {
             opacity: 1;
         }
     }
@@ -302,6 +308,7 @@ $color_blue: #07111d;
     // .check__info
     &__info {
         flex: 0 1 60%;
+        padding: 0px 0px 0px 20px;
     }
 
     // .check__title
@@ -319,7 +326,9 @@ $color_blue: #07111d;
         line-height: 150%;
         font-size: 17px;
         font-weight: 500;
-        color: $color_text;
+        color: #fff;
+        background-color: $color_golg;
+        text-align: center;
     }
 
     // .check__del
