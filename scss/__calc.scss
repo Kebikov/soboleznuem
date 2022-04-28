@@ -6,8 +6,11 @@ $color_blue: #07111d;
 .calc{
     max-width: 1200px;
     margin: 0 auto;
+
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+
 }
 
 .form{
@@ -21,8 +24,11 @@ $color_blue: #07111d;
 .shop-calc {
     flex: 0 1 48%;
     @media (max-width: 950px){
-        flex: 0 1 0%;
-        display: none;
+        flex: 0 1 100%;
+        margin:20px 10px 0px 10px;
+        padding: 10px 0px 10px 0px;
+        border-top: $color_blue 2px solid;
+
     }
 
     // .shop-calc__title
@@ -60,7 +66,7 @@ $color_blue: #07111d;
     // .shop-calc__info
     &__info {
         flex: 0 1 60%;
-        padding: 0px 0px 0px 20px;
+        padding: 0px 0px 0px 0px;
     }
 
     &__text{
@@ -69,6 +75,12 @@ $color_blue: #07111d;
         font-size: 20px;
         font-weight: 500;
         color: $color_text;
+        @media (max-width: 1910px){
+            font-size: calc(16px + 4 * (100vw - 375px) / 1535);
+        }
+        @media (max-width: 375px){
+            font-size: 16px;
+        }
     }
 
     // .shop-calc__cash
@@ -139,6 +151,12 @@ $color_blue: #07111d;
         color: $color_golg;
         padding: 0px 35px 0px 20px;
         position: relative;
+        @media (max-width: 1910px){
+            font-size: calc(17px + 3 * (100vw - 375px) / 1535);
+        }
+        @media (max-width: 375px){
+            font-size: 17px;
+        }
         //after
         &::after{
             content: '';
@@ -189,6 +207,12 @@ $color_blue: #07111d;
         //active
         &.active{
             font-size: 20px;
+            @media (max-width: 1910px){
+                font-size: calc(17px + 3 * (100vw - 375px) / 1535);
+            }
+            @media (max-width: 375px){
+                font-size: 17px;
+            }
         }
     }
     
@@ -213,6 +237,12 @@ $color_blue: #07111d;
     text-align: center;
     margin:0px 0px 20px 0px;
     cursor: pointer;
+    @media (max-width: 1910px){
+        font-size: calc(17px + 3 * (100vw - 375px) / 1535);
+    }
+    @media (max-width: 375px){
+        font-size: 17px;
+    }
 }
 
 .praice{
@@ -277,6 +307,12 @@ $color_blue: #07111d;
         line-height: 140%;
 
         position: relative;
+        @media (max-width: 1910px){
+            font-size: calc(16px + 2 * (100vw - 375px) / 1535);
+        }
+        @media (max-width: 375px){
+            font-size: 16px;
+        }
         &::before {
             content: '';
             position: absolute;
@@ -329,7 +365,7 @@ $color_blue: #07111d;
     // .check__info
     &__info {
         flex: 0 1 60%;
-        padding: 0px 0px 0px 20px;
+        padding: 0px 0px 0px 0px;
     }
 
     // .check__title

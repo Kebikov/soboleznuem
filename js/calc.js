@@ -10,7 +10,7 @@ let numCoffin, numWreath;
 
 document.addEventListener('click', function (e){
     const element = e.target;
-    console.log('element',element);
+    //console.log('element',element);
     
     //= гроб 
     if(element.closest('.coffin__tim')){
@@ -118,6 +118,7 @@ document.addEventListener('click', function (e){
         const imgCoffinElement = textParent.querySelector('.wreath__img');
         const imgCoffinSrc = imgCoffinElement.getAttribute('src');
         const textCoffin = textParent.querySelector('.wreath__label').innerHTML;
+        console.log('textCoffin',textCoffin);
         const cashCoffin = textParent.querySelector('.wreath__label').dataset.cash;
         const title = mainParent.querySelector('.wreath__tim-title');
         //mainParent.querySelector('.wreath__tim-title').dataset.all = cashCoffin;
@@ -339,15 +340,12 @@ document.addEventListener('click', function (e){
     if(element.closest('.more')){
         //возврат элемента перед кнопкой
         const previous = element.previousElementSibling;
-        console.log('previous',previous);
         //возврат класса элемента
         const classMy = previous.classList.value;
-        console.log('classMy',classMy);
         idTotal++;
         //если венки добавляем эл венки
         if(classMy === 'wreath'){
             const parent = document.querySelectorAll('.wreath');
-            console.log('parent',parent);
             parent[parent.length - 1].insertAdjacentHTML('afterend',`<div class="title-calc">Ваш выбор ритуального венка:</div>
             <div class="wreath" data-total="${idTotal}">
                 <div class="wreath__tim">
@@ -356,15 +354,15 @@ document.addEventListener('click', function (e){
                 </div>
                 <div class="wreath__item">
                     <img class="wreath__img" src="/img/__calc/wreath/1.png" alt="#">
-                    <div class="wreath__label" data-cash="70">Венок ритуальный (1.7 метра)</div>
+                    <div class="wreath__label" data-cash="70">Венок ритуальный<br>(1.7 метра)</div>
                 </div>
                 <div class="wreath__item">
                     <img class="wreath__img" src="/img/__calc/wreath/2.png" alt="#">
-                    <div class="wreath__label" data-cash="50">Венок ритуальный (1.5 метра)</div>
+                    <div class="wreath__label" data-cash="50">Венок ритуальный<br>(1.5 метра)</div>
                 </div>
                 <div class="wreath__item">
                     <img class="wreath__img" src="/img/__calc/wreath/3.png" alt="#">
-                    <div class="wreath__label" data-cash="30">Венок ритуальный (1.3 метра)</div>
+                    <div class="wreath__label" data-cash="30">Венок ритуальный<br>(1.3 метра)</div>
                 </div>
             </div>`);
         }
@@ -472,7 +470,7 @@ const praiceEl = document.querySelector('.praice');
 const footerEl = document.querySelector('.footer');
 
 let scrollWindows = footerEl.getBoundingClientRect().top - document.documentElement.clientHeight;
-console.log('scrollWindows',scrollWindows);
+//console.log('scrollWindows',scrollWindows);
 window.addEventListener('scroll', function (){
     if(footerEl.getBoundingClientRect().top - document.documentElement.clientHeight <= 0){
         praiceEl.classList.add('stiki');
