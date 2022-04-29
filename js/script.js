@@ -177,8 +177,6 @@ if(age17){
     window.addEventListener('scroll', numberScroll);
     let flag = 0;
     let age17Show = age17.getBoundingClientRect().bottom - document.documentElement.clientHeight;
-    console.log(age17Show);
-
     function numberScroll () {
         if(window.scrollY >= age17Show && flag === 0){
             startTime();
