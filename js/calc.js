@@ -464,19 +464,16 @@ document.addEventListener('click', function (e){
 
 
 //= прилипание praice 
-//возврат эл прайс для крепления в слушателе  и высоты экрана
-const praiceEl = document.querySelector('.praice');
-
+const footerObserver = new IntersectionObserver((entryAll) => {
+    entryAll.forEach((item) => {
+        if(item.isIntersecting){
+            praiceEl.classList.add('stiki');
+        }else{
+            praiceEl.classList.remove('stiki');
+        }
+    });
+},{});
 const footerEl = document.querySelector('.footer');
-
-let scrollWindows = footerEl.getBoundingClientRect().top - document.documentElement.clientHeight;
-//console.log('scrollWindows',scrollWindows);
-window.addEventListener('scroll', function (){
-    if(footerEl.getBoundingClientRect().top - document.documentElement.clientHeight <= 0){
-        praiceEl.classList.add('stiki');
-    }else{
-        praiceEl.classList.remove('stiki'); 
-    }
-});
-
+footerObserver.observe(footerEl);
+const praiceEl = document.querySelector('.praice');
 
