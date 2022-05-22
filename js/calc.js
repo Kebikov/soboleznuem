@@ -354,15 +354,15 @@ document.addEventListener('click', function (e){
                 </div>
                 <div class="wreath__item">
                     <img class="wreath__img" src="/img/__calc/wreath/1.png" alt="#">
-                    <div class="wreath__label" data-cash="70">Венок ритуальный<br>(1.7 метра)</div>
+                    <div class="wreath__label" data-cash="121">Венок ритуальный<br>(1.7 метра)</div>
                 </div>
                 <div class="wreath__item">
                     <img class="wreath__img" src="/img/__calc/wreath/2.png" alt="#">
-                    <div class="wreath__label" data-cash="50">Венок ритуальный<br>(1.5 метра)</div>
+                    <div class="wreath__label" data-cash="89">Венок ритуальный<br>(1.5 метра)</div>
                 </div>
                 <div class="wreath__item">
                     <img class="wreath__img" src="/img/__calc/wreath/3.png" alt="#">
-                    <div class="wreath__label" data-cash="30">Венок ритуальный<br>(1.3 метра)</div>
+                    <div class="wreath__label" data-cash="42">Венок ритуальный<br>(1.3 метра)</div>
                 </div>
             </div>`);
         }
@@ -378,7 +378,7 @@ document.addEventListener('click', function (e){
                 </div>
                 <div class="dress__item">
                     <img class="dress__img" src="/img/__calc/dress/1.jpg" alt="#">
-                    <div class="dress__label" data-cash="53">Костюм женский</div>
+                    <div class="dress__label" data-cash="55">Костюм женский</div>
                 </div>
                 <div class="dress__item">
                     <img class="dress__img" src="/img/__calc/dress/2.jpg" alt="#">

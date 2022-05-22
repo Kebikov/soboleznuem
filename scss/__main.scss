@@ -547,6 +547,118 @@ $color_blue: #07111d;
     }
 }
 
+//= calculator 
+.calculator {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 70px 0px 100px 0px;
+
+
+    // .calculator__body
+    &__body {
+        display: flex;
+        justify-content: center;
+        max-width: 800px;
+        @media (max-width: 700px){
+            flex-wrap: wrap;
+        }
+    }
+
+    // .calculator__img
+    &__img {
+        flex: 0 1 20%;
+        max-height: 200px;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media (max-width: 700px){
+            max-height: 120px;
+        }
+        & img {
+            object-fit: cover;
+            height: 100%;
+            width: auto;
+        }
+    }
+
+    // .calculator__discription
+    &__discription {
+        flex: 0 1 80%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        padding: 10px 20px 20px 20px;
+        @media (max-width: 700px){
+            flex: 0 1 100%;
+        }
+        
+    }
+
+    // .calculator__title
+    &__title {
+        font-family: 'Montserrat';
+        font-size: 26px;
+        font-weight: 500;
+        color: $color_golg;
+        padding: 0px 0px 30px 0px;
+        position: relative;
+        @media (max-width: 1910px){
+            font-size: calc(19px + 7 * (100vw - 375px) / 1535);
+        }
+        @media (max-width: 375px){
+            font-size: 19px;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 30%;
+            height: 3px;
+            background-color: $color_golg;
+
+        }
+
+    }
+
+    // .calculator__sub-title
+    &__sub-title {
+        font-family: 'Montserrat';
+        font-size: 18px;
+        font-weight: 500;
+        color: $color_text;
+        line-height: 150%;
+        padding: 0px 0px 20px 0px;
+        @media (max-width: 1910px){
+            font-size: calc(15px + 3 * (100vw - 375px) / 1535);
+        }
+        @media (max-width: 375px){
+            font-size: 15px;
+        }
+    }
+
+    &__button{
+        font-family: 'Montserrat';
+        font-size: 18px;
+        font-weight: 500;
+        color: #fff;
+        @media (max-width: 700px){
+            display: flex;
+            justify-content: center;
+        }
+
+        
+        & span{
+            background-color: $color_golg;
+            padding: 10px 20px 10px 20px;
+            border-radius: 10px;
+        }
+
+    }
+}
+
 //= prais 
 .box-prais {
     padding:20px 40px 20px 40px;
@@ -741,3 +853,91 @@ $color_blue: #07111d;
 }
 
 
+.music {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+
+    // .music__body
+    &__body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media (max-width: 750px){
+            flex-wrap: wrap;
+            text-align: center;
+        }
+    }
+
+    // .music__icon
+    &__icon {
+        flex: 0 1 15%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 20px 0px 20px;
+        & img {
+            object-fit: cover;
+            width: auto;
+            height: 120px;
+        }
+        @media (max-width: 750px){
+            padding: 0px 0px 20px 0px;
+        }
+    }
+
+    // .music__info
+    &__info {
+        flex: 0 1 85%;
+    }
+
+    // .music__title
+    &__title {
+        font-family: 'Montserrat';
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 130%;
+        color: $color_golg;
+        padding: 0px 0px 15px 0px;
+        @media (max-width: 1910px){
+            font-size: calc(18px + 2 * (100vw - 375px) / 1535);
+        }
+        @media (max-width: 375px){
+            font-size: 18px;
+        }
+    }
+
+    // .music__discription
+    &__discription {
+    }
+
+    // .music__line
+    &__line {
+        font-family: 'Montserrat';
+        font-size: 18px;
+        font-weight: 500;
+        color: $color_text;
+        padding: 0px 0px 10px 0px;
+        @media (max-width: 1910px){
+            font-size: calc(16px + 2 * (100vw - 375px) / 1535);
+        }
+        @media (max-width: 375px){
+            font-size: 16px;
+        }
+    }
+
+    // .music__text
+    &__text {
+        font-family: 'Montserrat';
+        font-size: 18px;
+        font-weight: 500;
+        color: $color_text;
+        line-height: 130%;
+        @media (max-width: 1910px){
+            font-size: calc(16px + 2 * (100vw - 375px) / 1535);
+        }
+        @media (max-width: 375px){
+            font-size: 16px;
+        }
+    }
+}

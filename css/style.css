@@ -1314,6 +1314,165 @@ body.active {
   height: 100%;
 }
 
+.calculator {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 70px 0px 100px 0px;
+}
+
+.calculator__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 800px;
+}
+
+@media (max-width: 700px) {
+  .calculator__body {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+.calculator__img {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 20%;
+          flex: 0 1 20%;
+  max-height: 200px;
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 700px) {
+  .calculator__img {
+    max-height: 120px;
+  }
+}
+
+.calculator__img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: auto;
+}
+
+.calculator__discription {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 80%;
+          flex: 0 1 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px 20px 20px 20px;
+}
+
+@media (max-width: 700px) {
+  .calculator__discription {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+}
+
+.calculator__title {
+  font-family: 'Montserrat';
+  font-size: 26px;
+  font-weight: 500;
+  color: #ba9f5a;
+  padding: 0px 0px 30px 0px;
+  position: relative;
+}
+
+@media (max-width: 1910px) {
+  .calculator__title {
+    font-size: calc(19px + 7 * (100vw - 375px) / 1535);
+  }
+}
+
+@media (max-width: 375px) {
+  .calculator__title {
+    font-size: 19px;
+  }
+}
+
+.calculator__title::before {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 30%;
+  height: 3px;
+  background-color: #ba9f5a;
+}
+
+.calculator__sub-title {
+  font-family: 'Montserrat';
+  font-size: 18px;
+  font-weight: 500;
+  color: #5B5B5B;
+  line-height: 150%;
+  padding: 0px 0px 20px 0px;
+}
+
+@media (max-width: 1910px) {
+  .calculator__sub-title {
+    font-size: calc(15px + 3 * (100vw - 375px) / 1535);
+  }
+}
+
+@media (max-width: 375px) {
+  .calculator__sub-title {
+    font-size: 15px;
+  }
+}
+
+.calculator__button {
+  font-family: 'Montserrat';
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .calculator__button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.calculator__button span {
+  background-color: #ba9f5a;
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+}
+
 .box-prais {
   padding: 20px 40px 20px 40px;
   margin: 0px 0px 40px 0px;
@@ -1507,6 +1666,128 @@ body.active {
   color: #5B5B5B;
   text-align: center;
   margin: 0px 10px 10px 10px;
+}
+
+.music {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+}
+
+.music__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 750px) {
+  .music__body {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    text-align: center;
+  }
+}
+
+.music__icon {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 15%;
+          flex: 0 1 15%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 20px 0px 20px;
+}
+
+.music__icon img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: auto;
+  height: 120px;
+}
+
+@media (max-width: 750px) {
+  .music__icon {
+    padding: 0px 0px 20px 0px;
+  }
+}
+
+.music__info {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 85%;
+          flex: 0 1 85%;
+}
+
+.music__title {
+  font-family: 'Montserrat';
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 130%;
+  color: #ba9f5a;
+  padding: 0px 0px 15px 0px;
+}
+
+@media (max-width: 1910px) {
+  .music__title {
+    font-size: calc(18px + 2 * (100vw - 375px) / 1535);
+  }
+}
+
+@media (max-width: 375px) {
+  .music__title {
+    font-size: 18px;
+  }
+}
+
+.music__line {
+  font-family: 'Montserrat';
+  font-size: 18px;
+  font-weight: 500;
+  color: #5B5B5B;
+  padding: 0px 0px 10px 0px;
+}
+
+@media (max-width: 1910px) {
+  .music__line {
+    font-size: calc(16px + 2 * (100vw - 375px) / 1535);
+  }
+}
+
+@media (max-width: 375px) {
+  .music__line {
+    font-size: 16px;
+  }
+}
+
+.music__text {
+  font-family: 'Montserrat';
+  font-size: 18px;
+  font-weight: 500;
+  color: #5B5B5B;
+  line-height: 130%;
+}
+
+@media (max-width: 1910px) {
+  .music__text {
+    font-size: calc(16px + 2 * (100vw - 375px) / 1535);
+  }
+}
+
+@media (max-width: 375px) {
+  .music__text {
+    font-size: 16px;
+  }
 }
 
 .container {
