@@ -2,6 +2,114 @@ $color_golg: #ba9f5a;
 $color_text: #5B5B5B;
 $color_blue: #07111d;
 
+//= весь блок сортировки 
+._sort-color {
+    background-color: #ba9f5a;
+    color: #fff;
+}
+
+.button-sort {
+    margin: 0 auto;
+    display: flex;
+    max-width: 1200px;
+    @media (max-width: 800px){
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin:0px 10px 0px 10px;
+    }
+    // .button-sort__box
+    &__box {
+        flex: 0 1 20%;
+        display: flex;
+        margin:0px 0px 40px 20px;
+        font-family: 'Montserrat';
+        font-size: 18px;
+        font-weight: 500;
+        color: $color_text;
+
+        border: #ba9f5a 2px solid;
+        border-radius: 10px 10px 10px 10px;
+
+        box-shadow: 15px 10px 10px 0px rgba(0, 0, 0, 0.25);
+        //По очереди: x, y, размытие, размер, цвет.
+        cursor: pointer;
+        @media (max-width: 800px){
+            flex: 0 1 50%;
+            order: 2;
+        }
+    }
+    // .button-sort__cheap
+    &__cheap {
+        flex: 0 1 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-right: #ba9f5a 2px solid;
+        padding: 10px 10px 10px 10px;
+    }
+    // .button-sort__lot
+    &__lot {
+        flex: 0 1 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 17px 10px 17px
+    }
+    //= от и до 
+    //button-sort__praice
+    &__praice{
+        margin: -15px 0px 40px 30px;
+        flex: 0 1 25%;
+        @media (max-width: 800px){
+            flex: 0 1 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            order: 1;
+            margin: 0px 0px 40px 0px;
+        }
+    }
+    //button-sort__title
+    &__title{
+        padding: 0px 0px 5px 0px;
+        font-family: 'Montserrat';
+        font-size: 16px;
+        font-weight: 500;
+        color: $color_text;
+    }
+    //button-sort__praice-box
+    &__praice-box {
+        flex: 0 1 100%;
+        display: flex;
+        border-right: #ba9f5a 2px solid;
+        border: #ba9f5a 2px solid;
+        box-shadow: 15px 10px 10px 0px rgba(0, 0, 0, 0.25);
+        @media (max-width: 800px){
+            width: 95%;
+        }
+    }
+    //button-sort__from
+    &__input {
+        flex: 0 0 50%;
+        padding: 5px 5px 5px 5px;
+        font-family: 'Montserrat';
+        font-size: 16px;
+        line-height: 140%;
+        font-weight: 500;
+        color: $color_text;
+        text-align: center;
+        @media (max-width: 800px){
+            width: 50%;
+        }
+    }
+}
+._border-right {
+    border-right: #ba9f5a 2px solid;
+}
+
+//= блок магазина 
 .shop{
     padding: 0px 10px 0px 10px;
 }
@@ -117,8 +225,23 @@ $color_blue: #07111d;
     max-width: 1200px;
     margin: 0 auto 20px auto;
 
-    &__item {
-        
+    &__not {
+        margin:0px 20px 0px 20px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        padding: 10px 0px 10px 0px;
+
+        border: #ba9f5a 4px solid;
+        border-radius: 10px;
+
+        font-family: 'Montserrat';
+        font-size: 18px;
+        line-height: 140%;
+        font-weight: 500;
+        color: $color_text;
+
     }
 }
 
