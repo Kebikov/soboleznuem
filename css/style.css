@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -2576,6 +2577,13 @@ body.active {
   width: 35px;
   background-image: url("../img/__contacts/icom-map.svg");
 }
+.contacts__map::after {
+  content: "(без выходных c 08:00 до 20:00)";
+  font-size: 15px;
+  position: absolute;
+  top: 40px;
+  left: 50px;
+}
 .contacts__mail {
   font-family: "Montserrat";
   color: #5B5B5B;
@@ -2717,6 +2725,9 @@ body.active {
   font-size: 25px;
   font-weight: 600;
   line-height: 140%;
+}
+.contacts__img-all span {
+  font-size: 22px;
 }
 @media (max-width: 1910px) {
   .contacts__img-all {

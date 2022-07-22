@@ -113,16 +113,21 @@ $color_blue: #07111d;
             margin:0px 0px 10px 0px;
             padding: 20px 0px 20px 50px;
             position: relative;
-            &::before{
+            &::before {
                 content: '';
                 position: absolute;
                 top: 15px;
                 left: 0;
-
                 height: 35px;
                 width: 35px;
-
                 background-image: url('../img/__contacts/icom-map.svg');
+            }
+            &::after {
+                content: "(без выходных c 08:00 до 20:00)";
+                font-size: 15px;
+                position: absolute;
+                top: 40px;
+                left: 50px;
             }
 		}
 
@@ -271,6 +276,9 @@ $color_blue: #07111d;
             font-size: 25px;
             font-weight: 600;
             line-height: 140%;
+            & span {
+                font-size: 22px;
+            }
             @media (max-width: 1910px){
                 font-size: calc(20px + 5 * (100vw - 375px) / 1535);
             }
